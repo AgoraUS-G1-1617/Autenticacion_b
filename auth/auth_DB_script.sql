@@ -1,3 +1,13 @@
+start transaction;
+
+create user 'auth-user'@'%' identified by password '*2A8D4AF90D3F6AB74436A917DAE14BFB82A01D1B';
+
+
+# Privilegios para `auth-user`@`%`
+
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, REFERENCES, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, TRIGGER ON *.* TO 'auth-user'@'%' IDENTIFIED BY PASSWORD '*2A8D4AF90D3F6AB74436A917DAE14BFB82A01D1B' WITH GRANT OPTION;
+
+
 CREATE DATABASE IF NOT EXISTS egcdb;
 USE egcdb;
 CREATE TABLE IF NOT EXISTS USERS(
@@ -16,4 +26,5 @@ INSERT INTO USERS VALUE(NULL, 'josnavmar','9d9f2aad56b353eba0f1455e76ddb232','jo
 INSERT INTO USERS VALUE(NULL, 'sercaroli','05091978bbc2a25dc311e825950aeb0f','sercaroli@alum.us.es','Masculino','Andalucia','22');
 INSERT INTO USERS VALUE(NULL, 'fuerte94','e048609908aed7af5ffe60ad8c37fb2c','jorrodfue@alum.us.es','Masculino','Andalucia','22');
 INSERT INTO USERS VALUE(NULL, 'aletormar','2a714a0e9c5af182865491b0969e5f60','aletormar@alum.us.es','Masculino','Andalucia','27');
+
 COMMIT;

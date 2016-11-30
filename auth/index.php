@@ -42,8 +42,8 @@ include_once 'variables.php';
 	<div class="row">
   <div class="col-md-4">
   	<div class="loginDNIe">
-		<h1 style="font-size: 40px;">Entrar con G+</h1>
-		<input  onClick="location.href = 'loginGoogle.php' "
+		<h1 style="font-size: 40px;">Entrar con Facebook</h1>
+		<input  onClick="location.href = 'loginFacebook.php' "
                             id="loginDNIe" 
                             type="button"
                             value ="Entra" 

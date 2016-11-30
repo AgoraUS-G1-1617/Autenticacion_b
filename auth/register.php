@@ -23,16 +23,14 @@ session_start();
    <link rel="stylesheet" href="layout.css" />
    <script src="lib/jquery-2.1.1.min.js"></script>
    
-   <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
-	<script type="text/javascript" src="bootstrap/js/bootstrap.mi.js"></script>
-	<script type="text/javascript" src="bootstrap/js/npm.js"></script>
+   <script type="text/javascript" src="style/bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="style/bootstrap/js/bootstrap.mi.js"></script>
+	<script type="text/javascript" src="style/bootstrap/js/npm.js"></script>
 	
-	
-	
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css">
-	<link rel="stylesheet" href="styles/bootstrap/css/bootstrap-theme.css" type="text/css">
-	<link rel="stylesheet" href="styles/bootstrap/css/bootstrap-theme.css.map" type="text/css">
-	<link rel="stylesheet" href="styles/bootstrap/css/bootstrap.css.map" type="text/css">
+	<link rel="stylesheet" href="style/bootstrap/css/bootstrap.css" type="text/css">
+	<link rel="stylesheet" href="style/bootstrap/css/bootstrap-theme.css" type="text/css">
+	<link rel="stylesheet" href="style/bootstrap/css/bootstrap-theme.css.map" type="text/css">
+	<link rel="stylesheet" href="style/bootstrap/css/bootstrap.css.map" type="text/css">
 	
 	<link rel="stylesheet" href="style/style.css" type="text/css">
    
@@ -108,14 +106,13 @@ session_start();
     $_SESSION['registerForm'] = $registerForm;
     ?>
     
-    <link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
-<body style="font-family: Roboto; color: white;">
+<body>
    
    <div class="tituloInicio">
-		<h1 style="font-size: 100px; font-family: Roboto">Formulario de registro</h1>
+		<h1>Formulario de registro</h1>
 	</div>
    <div id="error">
         <?php

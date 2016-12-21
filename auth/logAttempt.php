@@ -31,7 +31,7 @@ try{
     $loginRes = validUser($user, $pass);
     if ($loginRes) {
         setAuthCookie($user, $pass);
-        header('Location: ../welcome.php');
+        header('Location: welcome.php');
     } else {
         error("wrongPass");
     }

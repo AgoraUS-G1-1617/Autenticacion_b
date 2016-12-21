@@ -8,6 +8,21 @@
 */
 
 include_once 'variables.php';
+require_once "Facebook/autoload.php";
+
+session_start();
+
+$fb = new Facebook\Facebook([
+  'app_id' => '1166797976702364', // Replace {app-id} with your app id
+  'app_secret' => '21a7d98d0f739cef31c6dc5f43f37716',
+  'default_graph_version' => 'v2.8',
+  ]);
+
+$helper = $fb->getRedirectLoginHelper();
+
+$permissions = ['email']; // Optional permissions
+$loginUrl = $helper->getLoginUrl('https://beta.authb.agoraus1.egc.duckdns.org/fb-callback.php', $permissions);
+
 
 ?>
 <!DOCTYPE html>
@@ -42,11 +57,15 @@ include_once 'variables.php';
 	<div class="principal">
 	  <div class="col-md-4">
 		<h1>Entrar con Facebook</h1>
-		<input  onClick="location.href = 'loginFacebook.php' "
-                            id="loginDNIe" 
+		
+		<?php echo'<input onClick="location.href = \''.  htmlspecialchars($loginUrl) .'\'"
+		id="loginDNIe" 
                             type="button"
                             value ="Entra" 
-                           	class="btn btn-info"/>
+                           	class="btn btn-info"/>'; ?>
+
+
+		
 	  </div>
 
 	  <div class="col-md-4">

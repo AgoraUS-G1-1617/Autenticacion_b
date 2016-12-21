@@ -33,7 +33,7 @@ try {
   exit;
 }
 
-echo 'Bienvenido ' . $userNode->getName();
+echo 'Bienvenid@ ' . $userNode->getName();
 echo " <a href='logout.php'>Salir</a>";
 }
 

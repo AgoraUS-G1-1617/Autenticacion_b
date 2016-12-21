@@ -314,6 +314,17 @@ FOOTER
 	padding-top: 2em;
 }
 
+.inputForm{
+	font-size: 2em;
+	width: 30%;
+	color: black;
+}
+
+.labelForm{
+	color: #C3C3C3;
+	font-size: 2em;
+}
+
 
 
 @media only screen and (max-width: 600px){

@@ -23,16 +23,14 @@ session_start();
    <link rel="stylesheet" href="layout.css" />
    <script src="lib/jquery-2.1.1.min.js"></script>
    
-   <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
-	<script type="text/javascript" src="bootstrap/js/bootstrap.mi.js"></script>
-	<script type="text/javascript" src="bootstrap/js/npm.js"></script>
+   <script type="text/javascript" src="style/bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="style/bootstrap/js/bootstrap.mi.js"></script>
+	<script type="text/javascript" src="style/bootstrap/js/npm.js"></script>
 	
-	
-	
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css">
-	<link rel="stylesheet" href="styles/bootstrap/css/bootstrap-theme.css" type="text/css">
-	<link rel="stylesheet" href="styles/bootstrap/css/bootstrap-theme.css.map" type="text/css">
-	<link rel="stylesheet" href="styles/bootstrap/css/bootstrap.css.map" type="text/css">
+	<link rel="stylesheet" href="style/bootstrap/css/bootstrap.css" type="text/css">
+	<link rel="stylesheet" href="style/bootstrap/css/bootstrap-theme.css" type="text/css">
+	<link rel="stylesheet" href="style/bootstrap/css/bootstrap-theme.css.map" type="text/css">
+	<link rel="stylesheet" href="style/bootstrap/css/bootstrap.css.map" type="text/css">
 	
 	<link rel="stylesheet" href="style/style.css" type="text/css">
    
@@ -108,15 +106,12 @@ session_start();
     $_SESSION['registerForm'] = $registerForm;
     ?>
     
-    <link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
-<body style="font-family: Roboto; color: white;">
+<body>
    
-   <div class="tituloInicio">
-		<h1 style="font-size: 100px; font-family: Roboto">Formulario de registro</h1>
-	</div>
+   <div class="tituloInicio">Formulario de Registro</div>
    <div id="error">
         <?php
             if (isset($_REQUEST['error'])) {
@@ -191,8 +186,8 @@ session_start();
     <div align="left">
     <form id="registerForm" onsubmit="return form_process()" method="POST" action="action_register.php">
 
-                <label for="username" style="font-size: 22px"> <i class="glyphicon glyphicon-user"></i> Nombre de usuario:</label>
-                <input  type="text" id="username" name="username" style="font-size: 22px; width: 30%; color: black;" value=<?php echo htmlentities($registerForm['username']) ?>>
+                <label for="username" class="labelForm"> <i class="glyphicon glyphicon-user"></i> Nombre de usuario:</label>
+                <input  type="text" id="username" name="username" class="inputForm" value=<?php echo htmlentities($registerForm['username']) ?>>
   			
   				<label for="email" style="font-size: 22px; margin-left: 23px; margin-right: 24px;"><i class="glyphicon glyphicon-envelope"></i> Correo electrónico:</label>
                 <input  type="text" id="email" name="email" style="font-size: 22px; width: 30%;color: black;" value=<?php echo htmlentities($registerForm['email']) ?>>
@@ -201,7 +196,7 @@ session_start();
 <br />
                 
                 <label for="password" style="font-size: 22px; margin-right: 87px;"> <i class="fa fa-lock"></i> Contraseña:</label>
-                <input  type="password" id="password" name="password" style="font-size: 22px; width: 30%;color: black;" />
+                <input  type="password" id="password" name="password" class="inputForm" />
                 
                 <label for="r_password" style="font-size: 22px; margin-left: 23px; margin-right: 102px;"> <i class="fa fa-lock"></i> Contraseña:</label>
                 <input  type="password" id="r_password" name="r_password" style="font-size: 22px; width: 30%;color: black;" />
@@ -221,7 +216,7 @@ session_start();
                             id="age" 
                             name="age" 
                             min="1" 
-                            style="font-size: 22px; width: 5%;color: black; margin-right: 218px;"
+                            class="inputForm" 
                             value=<?php echo htmlentities($registerForm['age'])?>>
                             
                     <label for="autonomous_community" style="font-size: 22px; margin-right: 10px;">Comunidad autónoma:</label>

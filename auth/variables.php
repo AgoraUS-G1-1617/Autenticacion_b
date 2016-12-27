@@ -27,6 +27,6 @@
 *	'app_secret' => '21a7d98d0f739cef31c6dc5f43f37716',
 * 	'default_graph_version' => 'v2.8',
 **/
-    define("FB_APP_ID", "1166797976702364")
-    define("FB_APP_SECRET", "21a7d98d0f739cef31c6dc5f43f37716")
-    define("FB_APP_VERSION", "v2.8")
+    define("FB_APP_ID", "1166797976702364");
+    define("FB_APP_SECRET", "21a7d98d0f739cef31c6dc5f43f37716");
+    define("FB_APP_VERSION", "v2.8");

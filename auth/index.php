@@ -6,11 +6,11 @@
 * los mensajes de error de logAttempt.php y define la estructura del layout.
 * \author auth.agoraUS
 */
+session_start();
 
 include_once 'variables.php';
 require_once "Facebook/autoload.php";
 
-session_start();
 
 $fb = new Facebook\Facebook([
   'app_id' => '243693826062601', // Replace {app-id} with your app id

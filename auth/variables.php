@@ -19,3 +19,14 @@
     define("DB_HOST", "mysql:dbname=egcdb;host=localhost");
     define("DB_USER", "root");
     define("DB_PASS", "");
+
+    // Facebook
+
+/**
+*	'app_id' => '1166797976702360', // 4 Replace {app-id} with your app id
+*	'app_secret' => '21a7d98d0f739cef31c6dc5f43f37716',
+* 	'default_graph_version' => 'v2.8',
+**/
+    define("FB_APP_ID", "1166797976702360")
+    define("FB_APP_SECRET", "21a7d98d0f739cef31c6dc5f43f37716")
+    define("FB_APP_VERSION", "v2.8")

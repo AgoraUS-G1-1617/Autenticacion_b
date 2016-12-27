@@ -8,24 +8,41 @@
 */
 
 include_once 'variables.php';
+require_once "Facebook/autoload.php";
+
+session_start();
+
+$fb = new Facebook\Facebook([
+  'app_id' => '1166797976702364', // Replace {app-id} with your app id
+  'app_secret' => '21a7d98d0f739cef31c6dc5f43f37716',
+  'default_graph_version' => 'v2.8',
+  ]);
+
+$helper = $fb->getRedirectLoginHelper();
+
+$permissions = ['email']; // Optional permissions
+$loginUrl = $helper->getLoginUrl('https://beta.authb.agoraus1.egc.duckdns.org/fb-callback.php', $permissions);
+
 
 ?>
 <!DOCTYPE html>
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml">
 	
-	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
-	<script type="text/javascript" src="bootstrap/js/bootstrap.mi.js"></script>
-	<script type="text/javascript" src="bootstrap/js/npm.js"></script>
-	<script type="text/javascript" src="bootstrap/js/index.js"></script>
+	<script type="text/javascript" src="style/bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="style/bootstrap/js/bootstrap.mi.js"></script>
+	<script type="text/javascript" src="style/bootstrap/js/npm.js"></script>
+	<script type="text/javascript" src="style/bootstrap/js/index.js"></script>
+	
+	<!-- esto hace referencia a algo que no existe -->
 	<script type="text/javascript" src="scripts/index.js"></script>
 	
 	<link rel="stylesheet" href="style/style.css" type="text/css">
 
 	
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css">
-	<link rel="stylesheet" href="styles/bootstrap/css/bootstrap-theme.css" type="text/css">
-	<link rel="stylesheet" href="styles/bootstrap/css/bootstrap-theme.css.map" type="text/css">
-	<link rel="stylesheet" href="styles/bootstrap/css/bootstrap.css.map" type="text/css">
+	<link rel="stylesheet" href="style/bootstrap/css/bootstrap.css" type="text/css">
+	<link rel="stylesheet" href="style/bootstrap/css/bootstrap-theme.css" type="text/css">
+	<link rel="stylesheet" href="style/bootstrap/css/bootstrap-theme.css.map" type="text/css">
+	<link rel="stylesheet" href="style/bootstrap/css/bootstrap.css.map" type="text/css">
 	<link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
 	
 
@@ -33,45 +50,42 @@ include_once 'variables.php';
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <title><?php echo TITLE?></title>
 </head>
-<body style="background-color: #F5F5F5;font-family: Roboto;">
+<body>
 	
-	<div class="tituloInicio">
-		<h1 style="font-size: 100px; font-family: Roboto">¡Bienvenidos a agor@us!</h1>
-	</div>
+	<div class="tituloInicio">¡Bienvenidos a agor@us!</div>
 	
-	<div class="row">
-  <div class="col-md-4">
-  	<div class="loginDNIe">
-		<h1 style="font-size: 40px;">Entrar con G+</h1>
-		<input  onClick="location.href = 'loginGoogle.php' "
-                            id="loginDNIe" 
+	<div class="principal">
+	  <div class="col-md-4">
+		<h1>Entrar con Facebook</h1>
+		
+		<?php echo'<input onClick="location.href = \''.  htmlspecialchars($loginUrl) .'\'"
+		id="loginDNIe" 
                             type="button"
                             value ="Entra" 
-                           	class="btn btn-info"/>
-	</div>
-  </div>
-  <div class="col-md-4">
-  	<div class="loginNotDNIe">
-		<h1 style="font-size: 40px;">Entrar sin DNIe</h1>
+                           	class="btn btn-info"/>'; ?>
+
+
+		
+	  </div>
+
+	  <div class="col-md-4">
+		<h1>Entrar sin DNIe</h1>
 		<input  onClick="location.href = 'loginNotDNIe.php' "
                             id="loginNotDNIe" 
                             type="button"
                             value ="Entra" 
                            	class="btn btn-info"/>
-	</div>
-  </div>
-  
-  <div class="col-md-4">
-  	<div class="register">
-		<h1 style="font-size: 40px;">¿Aún no te has registrado?</h1>
+	  </div>
+	  
+	  <div class="col-md-4">
+		<h1>¿Aún no te has registrado?</h1>
 		<input  onClick="location.href = 'register.php' "
                             id="register" 
                             type="button"
                             value ="Registrate" 
                            	class="btn btn-info"/>
+	  </div>
 	</div>
-  </div>
-</div>
 	
 	
 </body>

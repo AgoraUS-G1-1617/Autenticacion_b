@@ -1,9 +1,12 @@
-@import url(http://fonts.googleapis.com/css?family=Bree+Serif);
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 @font-face {
-	font-family: "RobotoThin";
-	src: url("https://www.google.com/fonts#UsePlace:use/Collection:Roboto:100");
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: normal;
+	src: local("?"), url("https://fonts.googleapis.com/css?family=Roboto") format("truetype");
 }
+
 
 :selection {
 	color: #fff;
@@ -19,46 +22,48 @@
 	padding: 0;
 	border: none;
 	outline: none;
+	font-family: Roboto, "Roboto", 'Roboto';
 }
 
 body {
-	background-color: #c2185b;
-	font-family: Roboto;
-	font-weight:300;
+	background-color: #F5F5F5;
 	text-align: center;
 	text-decoration: none;
-	height: 500px;
+	height: auto;
+	color: white;
 }
 
+h1 {font-size: 5em;}
+
 #login{
-	margin-top: 10px;
+	margin-top: 1em;
 }
 
 #container{
-	border-radius: 5px;
-	padding: 5px;
-	margin-top: 50px;
+	border-radius: 0.3em;
+	padding: 2em;
+	margin-top: 3em;
 }
 #container article{
 	background: #f3f3f3;
-	border-radius: 5px;
+	border-radius: 3em;
 	display: inline-block;
-	min-width: 243px;
+	min-width: 10em;
 	vertical-align: top;
-	padding: 5px;
+	padding: 3em;
 }
 #three{
 	background: #f3f3f3;
-	border-radius: 5px;
+	border-radius: 3em;
 	display: inline-block;
-	width: 310px;
+	width: 10em;
 	vertical-align: top;
-	margin-left: 80px;
+	margin-left: 3em;
 }
 #header{
 	background: #e8e8e8; 
-	border-radius: 5px;
-	padding: 5px;
+	border-radius: 0.3em;
+	padding: 3em;
 }
 .gradient {
 	/* Center Positioning */
@@ -112,11 +117,12 @@ HEADER
 .login-form .header h1 {
 	font-family: 'Bree Serif', serif;
 	font-weight: 300;
-	font-size: 24px;
-	line-height:34px;
+	font-size: 2em;
+	line-height:2.3em;
 	color: #414848;
 	text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
-	margin-bottom: 10px;
+	margin-bottom: 3em;
+	margin-top: 3em;
 }
 
 .login-form .header span {
@@ -277,20 +283,112 @@ FOOTER
 .tituloInicio {
 	width: 100%;
 	background-color: #c2185b;
-	padding: 180px; 
-	font-family: RobotoThin;
+	font-size: 6em;
 	color: white;
+	padding-top: 1em;
+	padding-bottom: 1em;
 }
 
 
-
-.row{
-	
-	background-color: #F5F5F5;
-	padding: 90px;
-	border: 0px;
-}
 
 .formLogin {
 	margin-top: -30px;
+}
+
+
+
+
+/* NUEVOS 2016/2017 */
+.principal{
+	width: 100%;
+	height: auto;
+	text-align: center;
+}
+
+.col-md-4{
+	max-width: 100%;
+	min-width: 33%;
+	height: 15em;
+	/*background-color: #BEBEBE;*/
+	text-align: center;
+	padding-top: 2em;
+}
+
+.inputForm{
+	font-size: 1.5em;
+	width: 40%;
+	color: #333333;
+	background-color: #FAFAFA;
+	border-color:#c2185b;
+	border-width: 0.05em;
+	border-style: solid;
+	border-radius: 0.2em;
+	padding-left: 0.5em;
+}
+
+.labelForm{
+	width: 50%;
+	color: #333333;
+	font-size: 1.5em;
+}
+
+.inputForm2{
+	font-size: 1.5em;
+	width: 40%;
+	color: #333333;
+	background-color: #FAFAFA;
+	border-color:#c2185b;
+	border-width: 0.05em;
+	border-style: solid;
+	border-radius: 0.2em;
+	padding-left: 0.5em;
+}
+
+.labelForm2{
+	width: 10%;
+	color: #333333;
+	font-size: 1.5em;
+}
+
+.styleForm{
+	text-align: center;
+}
+
+.tituloW{
+	font-size: 2.5em;
+	color: #333333;
+}
+
+.errores{
+	width: 100%;
+	color: #c2185b;
+	background-color: #C3C3C3;
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+
+
+@media only screen and (max-width: 600px){
+	.tituloInicio{
+		width: 100%;
+		background-color: #c2185b;
+		font-size: 4em;
+		color: white;
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
+}
+
+
+
+@media only screen and (max-width: 400px){
+	.tituloInicio{
+		width: 100%;
+		background-color: #c2185b;
+		font-size: 2em;
+		color: white;
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
 }

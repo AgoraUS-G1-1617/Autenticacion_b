@@ -11,8 +11,8 @@ if(isset($_SESSION["fb_access_token"])){
 require_once "Facebook/autoload.php";
 
 $fb = new Facebook\Facebook([
-  'app_id' => '614797408693423', // Replace {app-id} with your app id
-  'app_secret' => '014de4ddef3ab38507d1380c349a09d0',
+  'app_id' => '243693826062601', // Replace {app-id} with your app id
+  'app_secret' => '084f0e9148fe6df7a71a67cb50523e56',
   'default_graph_version' => 'v2.8',
   ]);
 

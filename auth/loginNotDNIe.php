@@ -38,12 +38,12 @@ if (isset($_REQUEST['error'])) {
 	<script type="text/javascript" src="scripts/index.js"></script>
 	
 	
-<link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
-	
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css">
-	<link rel="stylesheet" href="styles/bootstrap/css/bootstrap-theme.css" type="text/css">
-	<link rel="stylesheet" href="styles/bootstrap/css/bootstrap-theme.css.map" type="text/css">
-	<link rel="stylesheet" href="styles/bootstrap/css/bootstrap.css.map" type="text/css">
+	<link rel="stylesheet" href="style/bootstrap/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="style/bootstrap/css/bootstrap-theme.css" type="text/css">
+    <link rel="stylesheet" href="style/bootstrap/css/bootstrap-theme.css.map" type="text/css">
+    <link rel="stylesheet" href="style/bootstrap/css/bootstrap.css.map" type="text/css">
+    
+    <link rel="stylesheet" href="style/style.css" type="text/css">
 	
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
@@ -51,23 +51,23 @@ if (isset($_REQUEST['error'])) {
     <link rel="stylesheet" href="style/style.css" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
-<body style="font-family: Roboto;">
-	<div class="tituloInicio">
-		<h1 style="font-size: 100px; font-family: Roboto">Entrar sin DNIe</h1>
-	</div>
+<body>
+	<div class="tituloInicio">Entrar sin DNIe</div>
 	
 	<div class="formLogin">
 		<form action="logAttempt.php" method="post" >
-		
-		<label for="user" style="font-size: 22px; color: white;"><i class="glyphicon glyphicon-user"></i></label>
-        <input  type="text" id="user" name="user" style="font-size: 22px" title="Su nombre de usuario" placeholder="Nombre de usuario" />
+
+		<br><br><br><br>
+
+		<label for="user" class="labelForm2"><i class="glyphicon glyphicon-user"></i></label>
+        <input  type="text" id="user" name="user" class="inputForm2" title="Su nombre de usuario" placeholder="Nombre de usuario" />
+
+        <br>
         
-        <label for="pass" style="margin-left: 30px; color: white; font-size: 22px;"><i class="fa fa-lock"></i></label>
-        <input type="password" id="pass" name="pass" title="Su contraseña" placeholder="Contraseña" style="font-size: 22px"/>
-        <br />
-        <br />
-        <br />
-        <br />
+        <label for="pass" class="labelForm2"><i class="fa fa-lock"></i></label>
+        <input type="password" id="pass" name="pass" title="Su contraseña" placeholder="Contraseña"  class="inputForm2"/>
+       
+        <br><br><br><br>
         
         <input type="submit" class="btn btn-info" value="Entrar">
                           

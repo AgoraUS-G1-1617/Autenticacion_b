@@ -23,16 +23,14 @@ session_start();
    <link rel="stylesheet" href="layout.css" />
    <script src="lib/jquery-2.1.1.min.js"></script>
    
-   <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
-	<script type="text/javascript" src="bootstrap/js/bootstrap.mi.js"></script>
-	<script type="text/javascript" src="bootstrap/js/npm.js"></script>
+   <script type="text/javascript" src="style/bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="style/bootstrap/js/bootstrap.mi.js"></script>
+	<script type="text/javascript" src="style/bootstrap/js/npm.js"></script>
 	
-	
-	
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css">
-	<link rel="stylesheet" href="styles/bootstrap/css/bootstrap-theme.css" type="text/css">
-	<link rel="stylesheet" href="styles/bootstrap/css/bootstrap-theme.css.map" type="text/css">
-	<link rel="stylesheet" href="styles/bootstrap/css/bootstrap.css.map" type="text/css">
+	<link rel="stylesheet" href="style/bootstrap/css/bootstrap.css" type="text/css">
+	<link rel="stylesheet" href="style/bootstrap/css/bootstrap-theme.css" type="text/css">
+	<link rel="stylesheet" href="style/bootstrap/css/bootstrap-theme.css.map" type="text/css">
+	<link rel="stylesheet" href="style/bootstrap/css/bootstrap.css.map" type="text/css">
 	
 	<link rel="stylesheet" href="style/style.css" type="text/css">
    
@@ -108,124 +106,137 @@ session_start();
     $_SESSION['registerForm'] = $registerForm;
     ?>
     
-    <link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
-<body style="font-family: Roboto; color: white;">
+<body>
    
-   <div class="tituloInicio">
-		<h1 style="font-size: 100px; font-family: Roboto">Formulario de registro</h1>
-	</div>
-   <div id="error">
+   <div class="tituloInicio">Formulario de Registro</div>
+    
+
+   <div id="error" class="errores">
+        <br>
         <?php
             if (isset($_REQUEST['error'])) {
                 $error = $_REQUEST['error'];
                 if ($error % 2 != 0) {
-                    echo "-Error al insertar en la base de datos.<br>";
+                    echo "Error al insertar en la base de datos.<br>";
                     $error--;
                 }
                 if ($error >= 23768) {
-                    echo "-La edad no es válida.<br>";
+                    echo "La edad no es válida.<br>";
                     $error -= 23768;
                 }
                 if ($error >= 16384) {
-                    echo "-Debe introducir una edad.<br>";
+                    echo "Debe introducir una edad.<br>";
                     $error -= 16384;
                 }
                 if ($error >= 8192) {
-                    echo "-La comunidad autónoma no es válida.<br>";
+                    echo "La comunidad autónoma no es válida.<br>";
                     $error -= 8192;
                 }
                 if ($error >= 4096) {
-                    echo "-Debe elegir una comunidad autónoma.<br>";
+                    echo "Debe elegir una comunidad autónoma.<br>";
                     $error-=4096;
                 }
                 if ($error >= 2048) {
-                    echo "-El género no es válido.<br>";
+                    echo "El género no es válido.<br>";
                     $error -= 2048;
                 }
                 if ($error >= 1024) {
-                    echo "-Debe elegir un género.<br>";
+                    echo "Debe elegir un género.<br>";
                     $error -= 1024;
                 }
                 if ($error >= 512) {
-                    echo "-El email ya está registrado.<br>";
+                    echo "El email ya está registrado.<br>";
                     $error -= 512;
                 }
                 if ($error >= 256) {
-                    echo "-La dirección de correo electrónico no es válida.<br>";
+                    echo "La dirección de correo electrónico no es válida.<br>";
                     $error -= 256;
                 }
                 if ($error >= 128) {
-                    echo "-Debe indicar una dirección de correo electrónico.<br>";
+                    echo "Debe indicar una dirección de correo electrónico.<br>";
                     $error -= 128;
                 }
                 if ($error >= 64) {
-                    echo "-Las contraseñas no coinciden.<br>";
+                    echo "Las contraseñas no coinciden.<br>";
                     $error -= 64;
                 }
                 if ($error >= 32) {
-                    echo "-La contraseña es demasiado corta (mínimo 5 caracteres).<br>";
+                    echo "La contraseña es demasiado corta (mínimo 5 caracteres).<br>";
                     $error -= 32;
                 }
                 if ($error >= 16) {
-                    echo "-Debe elegir una contraseña.<br>";
+                    echo "Debe elegir una contraseña.<br>";
                     $error -= 16;
                 }
                 if ($error >= 8) {
-                    echo "-Ese nombre de usuario ya existe.<br>";
+                    echo "Ese nombre de usuario ya existe.<br>";
                     $error -= 8;
                 }
                 if ($error >= 4) {
-                    echo "-El nombre de usuario es demasiado corto (mínimo 5 caracteres).<br>";
+                    echo "El nombre de usuario es demasiado corto (mínimo 5 caracteres).<br>";
                     $error -= 4;
                 }
                 if ($error >= 2) {
-                    echo "-Debe elegir un nombre de usuario.<br>";
+                    echo "Debe elegir un nombre de usuario.<br>";
                     $error -= 2;
                 }
             }
         ?>
+        <br>
     </div>
+
+
     <div align="left">
-    <form id="registerForm" onsubmit="return form_process()" method="POST" action="action_register.php">
+    <form id="registerForm" onsubmit="return form_process()" method="POST" action="action_register.php" class="styleForm">
+<br>
+<br>
 
-                <label for="username" style="font-size: 22px"> <i class="glyphicon glyphicon-user"></i> Nombre de usuario:</label>
-                <input  type="text" id="username" name="username" style="font-size: 22px; width: 30%; color: black;" value=<?php echo htmlentities($registerForm['username']) ?>>
+                <label for="username" class="labelForm"> <i class="glyphicon glyphicon-user"></i> Nombre de usuario:</label>
+                <input  type="text" id="username" name="username" class="inputForm" value=<?php echo htmlentities($registerForm['username']) ?>>
   			
-  				<label for="email" style="font-size: 22px; margin-left: 23px; margin-right: 24px;"><i class="glyphicon glyphicon-envelope"></i> Correo electrónico:</label>
-                <input  type="text" id="email" name="email" style="font-size: 22px; width: 30%;color: black;" value=<?php echo htmlentities($registerForm['email']) ?>>
+                <br>
+
+  				<label for="email" class="labelForm"><i class="glyphicon glyphicon-envelope"></i> Correo electrónico:</label>
+                <input  type="text" id="email" name="email" class="inputForm" value=<?php echo htmlentities($registerForm['email']) ?>>
   			
 <br />
 <br />
                 
-                <label for="password" style="font-size: 22px; margin-right: 87px;"> <i class="fa fa-lock"></i> Contraseña:</label>
-                <input  type="password" id="password" name="password" style="font-size: 22px; width: 30%;color: black;" />
+                <label for="password" class="labelForm"> <i class="fa fa-lock"></i> Contraseña:</label>
+                <input  type="password" id="password" name="password" class="inputForm" />
                 
-                <label for="r_password" style="font-size: 22px; margin-left: 23px; margin-right: 102px;"> <i class="fa fa-lock"></i> Contraseña:</label>
-                <input  type="password" id="r_password" name="r_password" style="font-size: 22px; width: 30%;color: black;" />
+                <br>
+
+                <label for="r_password" class="labelForm"> <i class="fa fa-lock"></i> Repetir Contraseña:</label>
+                <input  type="password" id="r_password" name="r_password" class="inputForm" />
                 
 <br />
 <br />
 
-				<label for="genre" style="font-size: 22px; margin-right: 153px;">Género:</label>
-                    <select id="genre" name="genre" style="font-size: 22px; width: 10%;color: black; margin-right: 27px;">
+				<label for="genre" class="labelForm">Género:</label>
+                    <select id="genre" name="genre" class="inputForm">
                         <option value="default">----------</option>
                         <option value="Masculino">Masculino</option>
                         <option value="Femenino">Femenino</option>
-                    </select>                
+                    </select>  
+
+                    <br>              
                     
-                    <label for="age" style="font-size: 22px;">Edad: </label>
+                    <label for="age" class="labelForm">Edad: </label>
                     <input  type="number" 
                             id="age" 
                             name="age" 
                             min="1" 
-                            style="font-size: 22px; width: 5%;color: black; margin-right: 218px;"
+                            class="inputForm" 
                             value=<?php echo htmlentities($registerForm['age'])?>>
                             
-                    <label for="autonomous_community" style="font-size: 22px; margin-right: 10px;">Comunidad autónoma:</label>
-                    <select name="autonomous_community" id="autonomous_community" style="font-size: 22px; width: 15%;color: black;"> 
+                    <br>
+
+                    <label for="autonomous_community" class="labelForm">Comunidad autónoma:</label>
+                    <select name="autonomous_community" id="autonomous_community" class="inputForm"> 
                         <option value="default" selected="true">----------</option>
                         <option value="Andalucia">Andalucia</option>
                         <option value="Murcia">Murcia</option>
@@ -244,8 +255,9 @@ session_start();
                         <option value="Navarra">Navarra</option>
                     </select>
 
-<br />
-<br />
+<br>
+<br>
+<br>
                 
                 <div align="center">  
                 	<input  type="submit" 

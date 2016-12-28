@@ -4,8 +4,8 @@ session_start();
 require_once "Facebook/autoload.php";
 
 $fb = new Facebook\Facebook([
-  'app_id' => '614797408693423', // Replace {app-id} with your app id
-  'app_secret' => '014de4ddef3ab38507d1380c349a09d0',
+  'app_id' => '243693826062601', // Replace {app-id} with your app id
+  'app_secret' => '084f0e9148fe6df7a71a67cb50523e56',
   'default_graph_version' => 'v2.8',
   ]);
 
@@ -36,7 +36,7 @@ if (! isset($accessToken)) {
   }
   exit;
 }
-/*
+
 // Logged in
 echo '<h3>Access Token</h3>';
 var_dump($accessToken->getValue());
@@ -50,12 +50,10 @@ echo '<h3>Metadata</h3>';
 var_dump($tokenMetadata);
 
 // Validation (these will throw FacebookSDKException's when they fail)
-$tokenMetadata->validateAppId("614797408693423"); // Replace {app-id} with your app id
+$tokenMetadata->validateAppId({app-id}); // Replace {app-id} with your app id
 // If you know the user ID this access token belongs to, you can validate it here
 //$tokenMetadata->validateUserId('123');
-$tokenMetadata->validateExpiration();*/
-
-
+$tokenMetadata->validateExpiration();
 
 if (! $accessToken->isLongLived()) {
   // Exchanges a short-lived access token for a long-lived one
@@ -71,11 +69,7 @@ if (! $accessToken->isLongLived()) {
 }
 
 $_SESSION['fb_access_token'] = (string) $accessToken;
-echo '<script language="javascript">
-            window.location.href="me.php";
-          </script>';
 
 // User is logged in with a long-lived access token.
 // You can redirect them to a members-only page.
-//header('Location: https://example.com/members.php');
-?>
+//header('Location: https://example.com/members.php');?>

@@ -96,6 +96,8 @@ if (isset($_SESSION['registerForm'])) {
         $registerForm['age'] = $_REQUEST['age'];
     }
 
+    $registerForm['role'] = $_REQUEST['role'];
+
     if ($error == 0) {
         try{
             createUser($registerForm['username'], 
@@ -103,7 +105,8 @@ if (isset($_SESSION['registerForm'])) {
                         $registerForm['email'], 
                         $registerForm['genre'], 
                         $registerForm['age'], 
-                        $registerForm['autonomous_community']);
+                        $registerForm['autonomous_community'],
+                        $registerForm['role']);
             session_unset($_SESSION['registerForm']);
             header("Location: index.php");
         }catch(Exception $e) {

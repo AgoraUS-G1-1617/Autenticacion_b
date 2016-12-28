@@ -47,6 +47,7 @@ function setUp() {
                                     "Cantabria",
                                     "Pais Vasco",
                                     "Navarra") NOT NULL,
+        ROLE ENUM("USUARIO","ADMIN","CREADOR_VOTACIONES") NOT NULL DEFAULT "USUARIO",
         AGE TINYINT NOT NULL,
         PRIMARY KEY(U_ID)
         );
@@ -68,6 +69,7 @@ function getUser($user) {
                                     GENRE, 
                                     AUTONOMOUS_COMMUNITY, 
                                     AGE 
+                                    ROLE
                                     FROM USERS WHERE USERNAME=:user");
     $stmt->bindParam(':user', $user);
     $stmt->execute();
@@ -92,7 +94,7 @@ function getEmail($email) {
 */
 function getAllUsers() {
     $con = connect();
-    $stmt = $con->prepare("SELECT USERNAME, PASSWORD, EMAIL, GENRE, AUTONOMOUS_COMMUNITY, AGE FROM USERS");
+    $stmt = $con->prepare("SELECT USERNAME, PASSWORD, EMAIL, GENRE, AUTONOMOUS_COMMUNITY, AGE, ROLE FROM USERS");
     $stmt->execute();
     return $stmt->fetchAll();
 }
@@ -107,7 +109,7 @@ function getAllUsers() {
 * \param $age Edad
 * \param $autonomous_community Comunidad autónoma
 */
-function createUser($username, $password, $email, $genre, $age, $autonomousCommunity) {
+function createUser($username, $password, $email, $genre, $age, $autonomousCommunity, $role) {
     $con = connect();
     $stmt = $con->prepare("INSERT INTO USERS VALUES(null, 
                                                     :username, 
@@ -115,12 +117,14 @@ function createUser($username, $password, $email, $genre, $age, $autonomousCommu
                                                     :email, 
                                                     :genre, 
                                                     :autonomousCommunity, 
-                                                    :age)");
+                                                    :age,
+                                                    :role)");
     $stmt->bindParam(':username', $username);
     $stmt->bindParam(':password', $password);
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':genre', $genre);
     $stmt->bindParam(':autonomousCommunity', $autonomousCommunity);
     $stmt->bindParam(':age', $age);
+    $stmt->bindParam(':role', $role);
     $stmt->execute();
 }

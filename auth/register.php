@@ -255,6 +255,8 @@ session_start();
                         <option value="Navarra">Navarra</option>
                     </select>
 
+                    <input type="text" name="role" id="role" class="inputForm" value="USUARIO" hidden="true" />
+
 <br>
 <br>
 <br>

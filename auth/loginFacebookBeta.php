@@ -89,14 +89,7 @@
       var email = details.email;
       var genero = details.gender;
 
-       /*$.ajax({
-                    type: "POST",
-                    url: "registerFacebook.php",
-                    data: "&nombre=" + nombre  +"&apellido=" + apellido +  +"&email=" + email + "&genero=" + genero,
-                    success: function () {
-                        alert("Success");
-                    }
-                });*/
+       /**/
 
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + 
@@ -106,6 +99,15 @@
         'Genero:  ' + genero  	+'!';
 
     });
+
+    $.ajax({
+                    type: "POST",
+                    url: "registerFacebook.php",
+                    data: "&nombre=" + nombre  +"&apellido=" + apellido +  +"&email=" + email + "&genero=" + genero,
+                    success: function () {
+                        alert("Success");
+                    }
+                });
   }
 </script>
 

@@ -87,8 +87,8 @@ $loginUrl = $helper->getLoginUrl('https://beta.authb.agoraus1.egc.duckdns.org/fb
 	  </div>
 	  <div class="col-md-4">
 		<h1>Entrar con Twitter</h1>
-		<input  onClick="location.href = 'loginToTwitter.php' "
-                            id="loginToTwitter" 
+		<input  onClick="location.href = 'twitter_login.php' "
+                            id="twitter_login" 
                             type="button"
                             value ="Entra" 
                            	class="btn btn-info"/>

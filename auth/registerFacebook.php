@@ -94,7 +94,27 @@ session_start();
     }
 
 
-//Facebook
+
+</script>
+<?php
+    if (!isset($_SESSION['registerForm'])) {
+        $registerForm['username'] = "";
+        $registerForm['password'] = "";
+        $registerForm['email'] = "";
+        $registerForm['age'] = "";
+    } else {
+        $registerForm = $_SESSION['registerForm'];
+    }
+
+    $_SESSION['registerForm'] = $registerForm;
+    ?>
+    
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body>
+   <script type="text/javascript">
+       //Facebook
 
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
@@ -183,25 +203,8 @@ session_start();
     });
   }
 
-</script>
-<?php
-    if (!isset($_SESSION['registerForm'])) {
-        $registerForm['username'] = "";
-        $registerForm['password'] = "";
-        $registerForm['email'] = "";
-        $registerForm['age'] = "";
-    } else {
-        $registerForm = $_SESSION['registerForm'];
-    }
-
-    $_SESSION['registerForm'] = $registerForm;
-    ?>
-    
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-</head>
-<body>
-   
+       
+   </script>
    <div class="tituloInicio">Formulario de Registro</div>
     
 
@@ -371,5 +374,7 @@ session_start();
         <i class="glyphicon glyphicon-copyright-mark"></i><b>Copyright</b>
     </div>
  </diV>
+ <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
 </body>
 </html>

@@ -83,7 +83,7 @@
       
       document.getElementById('status').innerHTML =
 		'<form name="myForm" action="registerFacebook.php" method="post">'+
-		'<p>¿Esta seguro de registrarse en nuestra aplicación' + response.first_name +' ?</p>'+
+		'<p>¿Esta seguro de registrarse en nuestra aplicación ' + response.first_name +' ?</p>'+
 
 		'<input type="hidden" name="nombre" value="' + response.first_name +'">'+
 		'<input type="hidden" name="apellido" value="' + response.last_name +'">'+

@@ -213,7 +213,7 @@ session_start();
                 <br>
 
   				<label for="email" class="labelForm"><i class="glyphicon glyphicon-envelope"></i> Correo electrónico:</label>
-                <input  type="email" id="email" name="email" class="inputForm" disabled value=<?php echo htmlentities($registerForm['email']) ?>>
+                <input  type="email" id="email" name="email" class="inputForm" disabled value=<?php echo htmlentities($registerFacebook['email']) ?>>
   			
 <br />
 <br />

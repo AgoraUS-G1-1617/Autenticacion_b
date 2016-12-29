@@ -82,7 +82,9 @@
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me?fields=id,name,email,first_name,last_name,gender', function(response) {
       console.log('Successful login for: ' + response.name);
-      
+
+      window.location = "/register.php";
+
       var details = response;
       var nombre = details.first_name
       var apellido = details.last_name;

@@ -1,4 +1,4 @@
 <?php 
-$resultado = $_POST['nombre'] + $_POST['email']+ $_POST['apellido']+ $_POST['genero']; 
+$resultado = $_POST['nombre'] ; 
 echo $resultado;
 ?>

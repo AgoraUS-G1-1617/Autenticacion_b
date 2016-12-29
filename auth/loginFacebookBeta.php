@@ -89,29 +89,13 @@
       var email = details.email;
       var genero = details.gender;
 
-	var parametros = {
+
+      $.post( "loginFacebook.php", {
 	                "nombre" : nombre,
 	                "apellido" : apellido,
 	                "email" : email,
 	                "genero" : genero
-	        };
-
-      $.ajax({
-                data:  parametros,
-                url:   'loginFacebook.php',
-                type:  'post',
-                beforeSend: function () {
-                        $("#resultado").html("Procesando, espere por favor...");
-                },
-                success:  function (response) {
-                        $("#resultado").html(response);
-                }
-        });
-
-    document.getElementById('username').value = nombre;
-    document.getElementById('email').value = email;
-
-    window.location = "/register.php";
+	        });
 
     });
   }

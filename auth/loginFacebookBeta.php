@@ -123,9 +123,10 @@
 <div id="status">
 </div>
 
-<?php print("Prueba") 
+<?php 
+print("Prueba"); 
 
-echo "<script>nombre</script>;
+echo "<script>nombre</script>";
 
 ?>
 

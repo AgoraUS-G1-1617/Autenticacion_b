@@ -6,9 +6,5 @@
 	$twitterObj = new EpiTwitter($consumer_key, $consumer_secret); 
 	$authenticateUrl = $twitterObj->getAuthenticateUrl();
 
-	$userdata = $twitterObj->get_accountVerify_credentials(); 
-
-	print("Nombre: ". $userdata->screen_name); 
-
-//header('Location: '.$authenticateUrl.'');
+header('Location: '.$authenticateUrl.'');
 ?>

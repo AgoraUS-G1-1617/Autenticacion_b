@@ -81,7 +81,11 @@
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
+        'Thanks for logging in, ' + response.name + 
+        "Nombre:  " + response.first_name	+ 
+        "Apellido:  " + response.last_name 	+ 
+        "Email:  " + response.email 	+ 
+        "Genero:  " + response.gender  	+'!';
     });
   }
 </script>

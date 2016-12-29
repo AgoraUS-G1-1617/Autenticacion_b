@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
 <title>Facebook Login JavaScript Example</title>
 <meta charset="UTF-8">
 </head>
@@ -80,12 +82,29 @@
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me?fields=id,name,email,first_name,last_name,gender', function(response) {
       console.log('Successful login for: ' + response.name);
+      
+      var details = response;
+      var nombre = details.first_name
+      var apellido = details.last_name;
+      var email = details.email;
+      var genero = details.gender;
+
+       $.ajax({
+                    type: "POST",
+                    url: "registerFacebook.php",
+                    data: "&nombre=" + nombre  +"&apellido=" + apellido +  +"&email=" + email + "&genero=" + genero,
+                    success: function () {
+                        alert("Success");
+                    }
+                });
+
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + 
         'Nombre:  ' + response.first_name	+ 
         'Apellido:  ' + response.last_name 	+ 
         'Email:  ' + response.email 	+ 
         'Genero:  ' + response.gender  	+'!';
+
     });
   }
 </script>

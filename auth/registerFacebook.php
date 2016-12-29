@@ -113,7 +113,8 @@ session_start();
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
-   <script type="text/javascript">
+
+   <script>
        //Facebook
 
   // This is called with the results from from FB.getLoginStatus().
@@ -203,7 +204,6 @@ session_start();
     });
   }
 
-       
    </script>
    <div class="tituloInicio">Formulario de Registro</div>
     
@@ -373,8 +373,9 @@ session_start();
     <div class="footer">
         <i class="glyphicon glyphicon-copyright-mark"></i><b>Copyright</b>
     </div>
- </diV>
- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
+ </diV>
+
 </body>
 </html>

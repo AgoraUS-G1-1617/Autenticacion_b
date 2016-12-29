@@ -38,6 +38,9 @@ $twitter = new TwitterOAuth(
     $token['oauth_token'],
     $token['oauth_token_secret']
 );
+$params = array('include_email' => 'true', 'include_entities' => 'true', 'skip_status' => 'true');
 
-$status = $twitter->get('/account/verify_credentials.json');
+$status = $twitter->get('account/verify_credentials', $params);
+
 echo ('Created new status with #' . $status->id . PHP_EOL);
+echo ('Nombre ' . $status->name . PHP_EOL);

@@ -78,26 +78,15 @@
 
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
+
+   var details;
+   var nombre = testAPI();
+   var apellido;
+   var email;
+   var genero;
+
   function testAPI() {
-    FB.api('/me?fields=id,name,email,first_name,last_name,gender', function(response) {
-      console.log('Successful login for: ' + response.name);
-
-
-      var details = response;
-      var nombre = details.first_name
-      var apellido = details.last_name;
-      var email = details.email;
-      var genero = details.gender;
-
-
-      $.post( "loginFacebook.php", {
-	                "nombre" : nombre,
-	                "apellido" : apellido,
-	                "email" : email,
-	                "genero" : genero
-	        });
-
-    });
+    return FB.api('/me?fields=id,name,email,first_name,last_name,gender', function(response) {});
   }
 </script>
 
@@ -110,7 +99,12 @@
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
 
-Resultado: <span id="resultado">0</span>
+<script type="text/javascript"> 
+document.writeln(lavariable);
+document.writeln(nombre['name']); 
+document.writeln(apellido); 
+
+</script> 
 
 </body>
 </html>

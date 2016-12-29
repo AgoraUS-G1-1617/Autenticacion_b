@@ -123,5 +123,11 @@
 <div id="status">
 </div>
 
+<?php print("Prueba") 
+
+echo "<script>nombre</script>;
+
+?>
+
 </body>
 </html>

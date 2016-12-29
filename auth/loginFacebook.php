@@ -1,4 +1,4 @@
 <?php 
-$resultado = $_POST['valorCaja1'] + $_POST['valorCaja2']; 
+$resultado = $_POST['nombre'] + $_POST['email']+ $_POST['apellido']+ $_POST['genero']; 
 echo $resultado;
 ?>

@@ -89,21 +89,21 @@
       var email = details.email;
       var genero = details.gender;
 
-       $.ajax({
+       /*$.ajax({
                     type: "POST",
                     url: "registerFacebook.php",
                     data: "&nombre=" + nombre  +"&apellido=" + apellido +  +"&email=" + email + "&genero=" + genero,
                     success: function () {
                         alert("Success");
                     }
-                });
+                });*/
 
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + 
-        'Nombre:  ' + response.first_name	+ 
-        'Apellido:  ' + response.last_name 	+ 
-        'Email:  ' + response.email 	+ 
-        'Genero:  ' + response.gender  	+'!';
+        'Nombre:  ' + nombre	+ 
+        'Apellido:  ' + apellido	+ 
+        'Email:  ' + email 	+ 
+        'Genero:  ' + genero  	+'!';
 
     });
   }

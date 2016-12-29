@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 <title>Facebook Login JavaScript Example</title>
 <meta charset="UTF-8">
@@ -79,11 +79,9 @@
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
     FB.api('/me?fields=id,name,email,first_name,last_name,gender', function(response) {
       console.log('Successful login for: ' + response.name);
 
-      window.location = "/register.php";
 
       var details = response;
       var nombre = details.first_name
@@ -91,14 +89,29 @@
       var email = details.email;
       var genero = details.gender;
 
-       /**/
+	var parametros = {
+	                "nombre" : nombre,
+	                "apellido" : apellido,
+	                "email" : email,
+	                "genero" : genero
+	        };
 
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + 
-        'Nombre:  ' + nombre	+ 
-        'Apellido:  ' + apellido	+ 
-        'Email:  ' + email 	+ 
-        'Genero:  ' + genero  	+'!';
+      $.ajax({
+                data:  parametros,
+                url:   'loginFacebook.php',
+                type:  'post',
+                beforeSend: function () {
+                        $("#resultado").html("Procesando, espere por favor...");
+                },
+                success:  function (response) {
+                        $("#resultado").html(response);
+                }
+        });
+
+    document.getElementById('username').value = nombre;
+    document.getElementById('email').value = email;
+
+    window.location = "/register.php";
 
     });
   }
@@ -113,15 +126,7 @@
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
 
-<div id="status">
-</div>
-
-<?php 
-print("Prueba"); 
-
-echo "<script>nombre</script>";
-
-?>
+Resultado: <span id="resultado">0</span>
 
 </body>
 </html>

@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
 <title>Facebook Login JavaScript Example</title>
 <meta charset="UTF-8">
 </head>
@@ -78,15 +76,23 @@
 
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
-
-   var details;
-   var nombre = testAPI();
-   var apellido;
-   var email;
-   var genero;
-
   function testAPI() {
-    return FB.api('/me?fields=id,name,email,first_name,last_name,gender', function(response) {});
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me?fields=id,name,email,first_name,last_name,gender', function(response) {
+      console.log('Successful login for: ' + response.name);
+      
+      document.getElementById('status').innerHTML =
+		'<form name="myForm" action="loginFacebook.php" method="post">'+
+		'<p>¿Esta seguro de registrarse en nuestra aplicación' + response.first_name +' ?</p>'+
+
+		'<input type="hidden" name="nombre" value="' + response.first_name +'">'+
+		'<input type="hidden" name="apellido" value="' + response.last_name +'">'+
+		'<input type="hidden" name="email" value="' + response.email +'">'+
+		'<input type="hidden" name="genero" value="' + response.gender +'">'+
+		'<input type="submit" value="Submit"  value="Confirmar">'+
+		'<\/form>';
+
+    });
   }
 </script>
 
@@ -99,12 +105,8 @@
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
 
-<script type="text/javascript"> 
-document.writeln(lavariable);
-document.writeln(nombre['name']); 
-document.writeln(apellido); 
-
-</script> 
+<div id="status">
+</div>
 
 </body>
 </html>

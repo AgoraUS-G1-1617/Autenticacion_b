@@ -29,13 +29,12 @@ $_SESSION["image"] = $userdata->profile_image_url;}
 // agregar a base de datos 
 
 //header("Location: loginTwitter.php"); 
+print("name: ");
+print($userdata->screen_name);
+
+print("<h2>Verify credentials</h2>");
+$creds = $twitterObj->get('/account/verify_credentials.json');
+print_r($creds->response);
 
 ?>
 
-<h2>Verify credentials</h2>
-<?php
-  $creds = $twitterObj->get('/account/verify_credentials.json');
-?>
-<pre>
-<?php print_r($creds->response); ?>
-</pre>

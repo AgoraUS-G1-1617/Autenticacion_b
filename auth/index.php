@@ -7,24 +7,10 @@
 * \author auth.agoraUS
 */
 session_start();
-
 include_once 'variables.php';
-require_once "Facebook/autoload.php";
-
-
-$fb = new Facebook\Facebook([
-  'app_id' => '243693826062601', // Replace {app-id} with your app id
-  'app_secret' => '084f0e9148fe6df7a71a67cb50523e56',
-  'default_graph_version' => 'v2.8',
-  ]);
-
-$helper = $fb->getRedirectLoginHelper();
-
-$permissions = ['email']; // Optional permissions
-$loginUrl = $helper->getLoginUrl('https://beta.authb.agoraus1.egc.duckdns.org/fb-callback.php', $permissions);
-
 
 ?>
+
 <!DOCTYPE html>
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml">
 	
@@ -57,15 +43,11 @@ $loginUrl = $helper->getLoginUrl('https://beta.authb.agoraus1.egc.duckdns.org/fb
 	<div class="principal">
 	  <div class="col-md-4">
 		<h1>Entrar con Facebook</h1>
-		
-		<?php echo'<input onClick="location.href = \''.  htmlspecialchars($loginUrl) .'\'"
-		id="loginDNIe" 
+		<input  onClick="location.href = 'loginFacebook.php' "
+                            id="loginFacebook" 
                             type="button"
                             value ="Entra" 
-                           	class="btn btn-info"/>'; ?>
-
-
-		
+                           	class="btn btn-info"/>
 	  </div>
 
 	  <div class="col-md-4">

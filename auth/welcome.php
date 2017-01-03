@@ -37,10 +37,10 @@ include_once 'variables.php';
 	
 	<div class="row">
   <div class="col-md-4">
-  	<div class="loginDNIe">
+  	<div class="censo">
 		<h1 class="tituloW">Censo</h1>
-		<input  onClick="location.href = 'http://localhost:90/ADMCensus/' "
-                            id="loginDNIe" 
+		<input  onClick="location.href = 'https://censos.agoraus1.egc.duckdns.org/' "
+                            id="censoId" 
                             type="button"
                             value ="Entra" 
                            	class="btn btn-info"/>
@@ -48,10 +48,10 @@ include_once 'variables.php';
   </div>
   
   <div class="col-md-4">
-  	<div class="loginNotDNIe">
+  	<div class="cabina">
 		<h1 class="tituloW">Cabina</h1>
-		<input  onClick="location.href = 'http://localhost:90/Cabina/' "
-                            id="loginNotDNIe" 
+		<input  onClick="location.href = 'https://cvotacion.agoraus1.egc.duckdns.org/' "
+                            id="cabinaId"
                             type="button"
                             value ="Entra" 
                            	class="btn btn-info"/>
@@ -59,12 +59,12 @@ include_once 'variables.php';
   </div>
   
   <div class="col-md-4">
-  	<div class="register">
+  	<div class="deliberaciones">
 		<h1 class="tituloW">Deliberaciones</h1>
-		<input  onClick="location.href = 'http://localhost:90/Deliberaciones/' "
-                            id="register" 
+		<input  onClick="location.href = 'https://deliberaciones.agoraus1.egc.duckdns.org/' "
+                            id="deliberacionesId" 
                             type="button"
-                            value ="Registrate" 
+                            value ="Entra" 
                            	class="btn btn-info"/>
 	</div>
   </div>

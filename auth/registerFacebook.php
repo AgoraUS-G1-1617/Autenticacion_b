@@ -100,9 +100,9 @@ session_start();
     if (!isset($_SESSION['registerForm'])) {
         $registerForm['username'] = "";
         $registerForm['password'] = "";
-        $registerForm['name'] = "Alejandro";
-        $registerForm['surname'] ="Rodriguez";
-        $registerForm['email'] = "alerodri1994@gmail.com";
+        $registerForm['name'] = $_POST['nombre'];
+        $registerForm['surname'] =$_POST['apellido'];
+        $registerForm['email'] = $_POST['email'];
         $registerForm['age'] = "";
     } else {
         $registerForm = $_SESSION['registerForm'];

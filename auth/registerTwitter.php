@@ -118,7 +118,7 @@ session_start();
 if (!isset($_SESSION['registerForm'])) {
     $registerForm['username'] = "";
     $registerForm['password'] = "";
-    $registerForm['name'] = $registerTwitter['nombre'];
+    $registerForm['name'] = $_SESSION['nombre'];
     $registerForm['surname'] = $registerTwitter['apellido'];
     $registerForm['email'] = $registerTwitter['email'];
     $registerForm['age'] = "";

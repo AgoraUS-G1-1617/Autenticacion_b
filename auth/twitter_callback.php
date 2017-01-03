@@ -41,5 +41,5 @@ $twitter = new TwitterOAuth(
 $params = array('include_email' => 'true', 'include_entities' => 'true', 'skip_status' => 'true');
 
 $status = $twitter->get('account/verify_credentials', $params);
-$_SESSION['registerTwitter'] = $status;
-header("Location: registerTwitterTwitter.php"); 
+$_SESSION['nombre'] = $status->name . PHP_EOL;
+header("Location: registerTwitter.php"); 

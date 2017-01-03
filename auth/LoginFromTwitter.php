@@ -22,19 +22,13 @@ $twitterObj->setToken($token->oauth_token, $token->oauth_token_secret);
 
 $userdata = $twitterObj->get_accountVerify_credentials(); 
 
-$_SESSION["username"] = $userdata->screen_name; 
+$_SESSION["name"] = $userdata->screen_name; 
 
 $_SESSION["image"] = $userdata->profile_image_url;} 
 
 // agregar a base de datos 
 
-//header("Location: loginTwitter.php"); 
-print("name: ");
-print($userdata->screen_name);
-
-print("<h2>Verify credentials</h2>");
-$creds = $twitterObj->get('/account/verify_credentials.json');
-print_r($creds->response);
+header("Location: registerTwitter.php"); 
 
 ?>
 

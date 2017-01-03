@@ -23,7 +23,7 @@ $_SESSION["registerFacebook"]=$registerFacebook;
 
 include_once("database.php");
 session_start();
-
+echo strtolower( $_SERVER['REQUEST_URI'] );
 ?>
 
 <!DOCTYPE html>

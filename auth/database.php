@@ -30,6 +30,8 @@ function setUp() {
         U_ID INT AUTO_INCREMENT,
         USERNAME VARCHAR(40) UNIQUE,
         PASSWORD VARCHAR(40),
+        NAME VARCHAR(30) NOT NULL,
+        SURNAME VARCHAR(30) NOT NULL,
         EMAIL VARCHAR(100) UNIQUE,
         GENRE ENUM("Femenino","Masculino") NOT NULL,
         AUTONOMOUS_COMMUNITY ENUM(  "Andalucia",
@@ -64,7 +66,9 @@ function setUp() {
 function getUser($user) {
     $con = connect();
     $stmt = $con->prepare("SELECT   USERNAME, 
-                                    PASSWORD, 
+                                    PASSWORD,
+                                    NAME,
+                                    SURNAME,
                                     EMAIL, 
                                     GENRE, 
                                     AUTONOMOUS_COMMUNITY, 
@@ -94,7 +98,7 @@ function getEmail($email) {
 */
 function getAllUsers() {
     $con = connect();
-    $stmt = $con->prepare("SELECT USERNAME, PASSWORD, EMAIL, GENRE, AUTONOMOUS_COMMUNITY, AGE, ROLE FROM USERS");
+    $stmt = $con->prepare("SELECT USERNAME, PASSWORD, NAME, SURNAME, EMAIL, GENRE, AUTONOMOUS_COMMUNITY, AGE, ROLE FROM USERS");
     $stmt->execute();
     return $stmt->fetchAll();
 }
@@ -109,11 +113,13 @@ function getAllUsers() {
 * \param $age Edad
 * \param $autonomous_community Comunidad autónoma
 */
-function createUser($username, $password, $email, $genre, $age, $autonomousCommunity, $role) {
+function createUser($username, $password, $name, $surname, $email, $genre, $age, $autonomousCommunity, $role) {
     $con = connect();
     $stmt = $con->prepare("INSERT INTO USERS VALUES(null, 
                                                     :username, 
                                                     :password, 
+                                                    :name,
+                                                    :surname,
                                                     :email, 
                                                     :genre, 
                                                     :autonomousCommunity, 
@@ -121,6 +127,8 @@ function createUser($username, $password, $email, $genre, $age, $autonomousCommu
                                                     :role)");
     $stmt->bindParam(':username', $username);
     $stmt->bindParam(':password', $password);
+    $stmt->bindParam(':name', $name);
+    $stmt->bindParam(':surname', $surname);
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':genre', $genre);
     $stmt->bindParam(':autonomousCommunity', $autonomousCommunity);

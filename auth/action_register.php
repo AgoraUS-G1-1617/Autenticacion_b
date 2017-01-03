@@ -95,13 +95,26 @@ if (isset($_SESSION['registerForm'])) {
     } else {
         $registerForm['age'] = $_REQUEST['age'];
     }
-
+    if (!isset($_REQUEST['name']) || $_REQUEST['name'] == "") {
+        $registerForm['name'] = $_REQUEST['name'];
+        $error += 47536;
+    }else {
+        $registerForm['name'] = $_REQUEST['name'];
+    }
+    if (!isset($_REQUEST['surname']) || $_REQUEST['surname'] == "") {
+        $registerForm['surname'] = $_REQUEST['surname'];
+        $error += 95072;
+    }else {
+        $registerForm['surname'] = $_REQUEST['surname'];
+    }
     $registerForm['role'] = $_REQUEST['role'];
 
     if ($error == 0) {
         try{
             createUser($registerForm['username'], 
                         md5($registerForm['password']), 
+                        $registerForm['name'],
+                        $registerForm['surname'],
                         $registerForm['email'], 
                         $registerForm['genre'], 
                         $registerForm['age'], 

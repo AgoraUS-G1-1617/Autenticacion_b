@@ -66,6 +66,14 @@ session_start();
             errores = true;
             $('#error').html($('#error').html() + "-Las contraseñas no coinciden<br>");
         }
+        if ($('#name').val() == undefined || $('#name').val() == "") {
+            errores = true;
+            $('#error').html($('#error').html() + "-Debe elegir un nombre<br>");
+        }
+        if ($('#surname').val() == undefined || $('#surname').val() == "") {
+            errores = true;
+            $('#error').html($('#error').html() + "-Debe elegir unos apellido<br>");
+        }
         if ($('#email').val() == undefined || $('#email').val() == "") {
             errores = true;
             $('#error').html($('#error').html() + "-Debe indicar una dirección de correo electrónico.<br>");
@@ -97,6 +105,8 @@ session_start();
     if (!isset($_SESSION['registerForm'])) {
         $registerForm['username'] = "";
         $registerForm['password'] = "";
+        $registerForm['name'] = "";
+        $registerForm['surname'] ="";
         $registerForm['email'] = "";
         $registerForm['age'] = "";
     } else {
@@ -122,6 +132,14 @@ session_start();
                 if ($error % 2 != 0) {
                     echo "Error al insertar en la base de datos.<br>";
                     $error--;
+                }
+                if ($error >= 95072) {
+                    echo "Debe introducir sus apellidos.<br>";
+                    $error -= 95072;
+                }
+                if ($error >= 47536) {
+                    echo "Debe introducir un nombre.<br>";
+                    $error -= 47536;
                 }
                 if ($error >= 23768) {
                     echo "La edad no es válida.<br>";
@@ -215,6 +233,16 @@ session_start();
                 
 <br />
 <br />
+                
+                <label for="name" class="labelForm">Nombre:</label>
+                <input  type="text" id="name" name="name" class="inputForm" value=<?php echo htmlentities($registerForm['name']) ?>>
+                
+                <br>
+
+               <label for="surname" class="labelForm">Apellidos:</label>
+                <input  type="text" id="surname" name="surname" class="inputForm" value=<?php echo htmlentities($registerForm['surname']) ?>>
+
+                <br>
 
 				<label for="genre" class="labelForm">Género:</label>
                     <select id="genre" name="genre" class="inputForm">

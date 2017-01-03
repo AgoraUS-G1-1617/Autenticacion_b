@@ -7,10 +7,6 @@
 * \author auth.agoraUS
 */
 
-
-$clave_del_sitio = "6LfD6hcTAAAAAOLQVRMu_oJA4eCRIUxGj0tAo8HJ";
-$clave_secreta = "6LfD6hcTAAAAALJdSU9xW9qZfDy0PkvcJLPs7HE4";
-
 if (!isset($_SESSION["registerFacebook"])) {
     $registerFacebook["nombre"] = $_POST["nombre"];
     $registerFacebook["email"] = $_POST["email"];

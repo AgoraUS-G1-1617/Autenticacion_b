@@ -118,8 +118,9 @@ session_start();
 if (!isset($_SESSION['registerForm'])) {
     $registerForm['username'] = "";
     $registerForm['password'] = "";
-    $registerForm['name'] = "";
-    $registerForm['surname'] ="";
+    $registerForm['name'] = $registerFacebook['nombre'];
+    $registerForm['surname'] = $registerFacebook['apellido'];
+    $registerForm['email'] = $registerFacebook['email'];
     $registerForm['age'] = "";
 } else {
     $registerForm = $_SESSION['registerForm'];

@@ -80,6 +80,14 @@ session_start();
             errores = true;
             $('#error').html($('#error').html() + "-Las contraseñas no coinciden<br>");
         }
+        if ($('#name').val() == undefined || $('#name').val() == "") {
+            errores = true;
+            $('#error').html($('#error').html() + "-Debe elegir un nombre<br>");
+        }
+        if ($('#surname').val() == undefined || $('#surname').val() == "") {
+            errores = true;
+            $('#error').html($('#error').html() + "-Debe elegir unos apellido<br>");
+        }
         if ($('#email').val() == undefined || $('#email').val() == "") {
             errores = true;
             $('#error').html($('#error').html() + "-Debe indicar una dirección de correo electrónico.<br>");
@@ -114,6 +122,8 @@ session_start();
 if (!isset($_SESSION['registerForm'])) {
     $registerForm['username'] = "";
     $registerForm['password'] = "";
+    $registerForm['name'] = "";
+    $registerForm['surname'] ="";
     $registerForm['age'] = "";
 } else {
     $registerForm = $_SESSION['registerForm'];
@@ -211,25 +221,29 @@ $_SESSION['registerForm'] = $registerForm;
 
         <label for="username" class="labelForm"> <i class="glyphicon glyphicon-user"></i> Nombre de usuario:</label>
         <input  type="text" id="username" name="username" class="inputForm" value=<?php echo htmlentities($registerForm['username']) ?>>
-
         <br>
 
         <label for="email" class="labelForm"><i class="glyphicon glyphicon-envelope"></i> Correo electrónico:</label>
         <input  type="email" id="email" name="email" class="inputForm" disabled value=<?php echo htmlentities($registerFacebook['email']) ?>>
-
         <br />
         <br />
 
         <label for="password" class="labelForm"> <i class="fa fa-lock"></i> Contraseña:</label>
         <input  type="password" id="password" name="password" class="inputForm" />
-
         <br>
 
         <label for="r_password" class="labelForm"> <i class="fa fa-lock"></i> Repetir Contraseña:</label>
         <input  type="password" id="r_password" name="r_password" class="inputForm" />
+        <br />
+        <br />
 
-        <br />
-        <br />
+        <label for="name" class="labelForm">Nombre:</label>
+        <input  type="text" id="name" name="name" class="inputForm" value=<?php echo htmlentities($registerFacebook['nombre']) ?>>
+        <br>
+
+        <label for="surname" class="labelForm">Apellidos:</label>
+        <input  type="text" id="surname" name="surname" class="inputForm" value=<?php echo htmlentities($registerFacebook['apellido']) ?>>
+        <br>
 
         <label for="genre" class="labelForm">Género:</label>
         <select id="genre" name="genre" class="inputForm">
@@ -237,17 +251,10 @@ $_SESSION['registerForm'] = $registerForm;
             <option value="Masculino">Masculino</option>
             <option value="Femenino">Femenino</option>
         </select>  
-
         <br>              
 
         <label for="age" class="labelForm">Edad: </label>
-        <input  type="number" 
-        id="age" 
-        name="age" 
-        min="1" 
-        class="inputForm" 
-        value=<?php echo htmlentities($registerForm['age'])?>>
-
+        <input  type="number" id="age" name="age" min="1" class="inputForm" value=<?php echo htmlentities($registerForm['age'])?>>
         <br>
 
         <label for="autonomous_community" class="labelForm">Comunidad autónoma:</label>
@@ -283,12 +290,12 @@ $_SESSION['registerForm'] = $registerForm;
            class="btn btn-info" align="center"/>
        </div> 
 
-
-
    </form>
 </div>
+
 <br />
 <br />
+
 <div class="push"></div>
 <div align="left">
     <div class="footer">

@@ -279,6 +279,7 @@ session_start();
                     </select>
 
                     <input type="text" name="role" id="role" class="inputForm" value="USUARIO" hidden="true" />
+                    <input type="text" name="urlAnterior" id="urlAnterior" class="inputForm" value=<?php echo $_SERVER['REQUEST_URI']; ?> hidden="true" />
 
 <br>
 <br>

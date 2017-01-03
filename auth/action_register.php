@@ -11,7 +11,7 @@ session_start();
 include_once('database.php');
 include_once('auth.php');
 
-$uri = strtolower( $_SERVER['REQUEST_URI'] );
+$uri = $_POST['urlAnterior'];
 
 $error = 0;
 if (isset($_SESSION['registerForm'])) {

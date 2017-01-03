@@ -300,8 +300,10 @@ $_SESSION['registerForm'] = $registerForm;
     </div>
 
 </diV>
+<?php 
+$uri = strtolower( $_SERVER['REQUEST_URI'] );
 
-<?php echo strtolower( $_SERVER['REQUEST_URI'] ); ?>
+print($uri); ?>
 
 </body>
 </html>

@@ -42,4 +42,5 @@ $params = array('include_email' => 'true', 'include_entities' => 'true', 'skip_s
 
 $status = $twitter->get('account/verify_credentials', $params);
 $_SESSION['nombre'] = $status->name . PHP_EOL;
-header("Location: registerTwitter.php"); 
+echo $_SESSION['nombre'];
+header("Location: loginToTwitter.php"); 

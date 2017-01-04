@@ -2,11 +2,11 @@
 
 session_start(); 
 
-include("lib/EpiCurl.php"); 
+include("/EpiCurl.php"); 
 
-include('lib/EpiOAuth.php'); 
+include('EpiOAuth.php'); 
 
-include('lib/EpiTwitter.php'); 
+include('EpiTwitter.php'); 
 
 include('keyTwitter.php'); 
 

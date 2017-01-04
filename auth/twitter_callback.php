@@ -41,6 +41,5 @@ $twitter = new TwitterOAuth(
 $params = array('include_email' => 'true', 'include_entities' => 'true', 'skip_status' => 'true');
 
 $status = $twitter->get('account/verify_credentials', $params);
-$_SESSION['nombre'] = $status->name . PHP_EOL;
-echo $_SESSION['nombre'];
-header("Location: loginToTwitter.php"); 
+echo($status->id . PHP_EOL);
+echo($status->name . PHP_EOL);

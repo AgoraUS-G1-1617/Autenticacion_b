@@ -144,7 +144,7 @@ if (!isset($_SESSION['registerForm'])) {
     echo ("si");
     $registerForm['username'] = "";
     $registerForm['password'] = "";
-    $registerForm['name'] = $_SESSION['nombre'];
+    $registerForm['name'] =  $status->name . PHP_EOL;
     $registerForm['surname'] = $registerTwitter['apellido'];
     $registerForm['email'] = $registerTwitter['email'];
     $registerForm['age'] = "";

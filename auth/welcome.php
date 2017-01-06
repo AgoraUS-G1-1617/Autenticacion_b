@@ -32,6 +32,15 @@ include_once 'variables.php';
     <title><?php echo TITLE?></title>
 </head>
 <body>
+
+<div class="cabina">
+    <h1 class="tituloW"></h1>
+    <input  onClick="location.href = 'panelAdministracion.php' "
+                            id="PanelAdm"
+                            type="button"
+                            value ="Panel de Administracion" 
+                            class="btn btn-info"/>
+  </div>
 	
 	<div class="tituloInicio">Selecciona dónde quieres acceder</div>
 	

@@ -39,6 +39,13 @@
                     checkTokenUser($_GET['token'], $_GET['user']);
                 }
                 break;
+            case 'getRoleUser':
+                if (!isset($_GET['user'])) {
+                    badRequest();
+                } else {
+                    getRoleUser($_GET['user']);
+                }
+            break;
             default:
                 badRequest();
                 break;
@@ -139,6 +146,22 @@
         return json_encode($result);
     }
 
+/**
+    * \brief Obtener rol de usuario
+    * \details Devuelve el rol de dicho usuario.
+    * \return JSON
+    */
+    function getRoleUser($username) {
+        header('HTTP/1.1 200 OK');
+        header('Content-type: application/json');
+        $user = getUser($username);
+
+        $result['username'] = $user[0];
+        $result['role'] = $user[8];
+
+        echo json_encode(utf8ize($result),  JSON_UNESCAPED_UNICODE);
+        return json_encode(utf8ize($result),  JSON_UNESCAPED_UNICODE);
+    }
 
 
 

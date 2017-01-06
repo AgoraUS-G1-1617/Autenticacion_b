@@ -8,7 +8,4 @@ php:
     - hhvm
 
 script:
-    - phpunit --version
-    - cd test
-    - phpunit databaseTest.php
-    - phpunit tokenTest.php
+    - phpunit --configuration phpunit.xml --coverage-text

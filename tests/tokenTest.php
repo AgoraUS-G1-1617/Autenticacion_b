@@ -27,8 +27,7 @@ class tokenTest extends PHPUnit_Framework_TestCase
     * \brief Inicialización de la prueba
     */
     protected function setUp() {
-        $con = new PDO($GLOBALS['db_dsn'], $GLOBALS['db_username'], $GLOBALS['db_password']);
-        $con ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $con = connect();
         $stmt = $con->query('
          DROP TABLE IF EXISTS USERS;
             CREATE TABLE USERS (
@@ -125,7 +124,8 @@ class tokenTest extends PHPUnit_Framework_TestCase
     * \brief Finalización de la prueba
     */
     function tearDown(){
-        $this->pdo->queryquery('
+        $con = connect();
+        $stmt = $con->query('
             DROP TABLE USERS;
             ');
     }

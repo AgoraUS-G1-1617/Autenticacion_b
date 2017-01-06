@@ -7,7 +7,7 @@ services:
   - mysql
 
 before_script:
-    - mysql -e 'create database IF NOT EXISTS egc_test;'
+    - mysql -e 'create database IF NOT EXISTS egcdb;'
 
 script:
     -  phpunit --configuration $TRAVIS_BUILD_DIR/phpunit.xml --coverage-text

@@ -8,5 +8,6 @@ php:
     - hhvm
 
 script:
-    - phpunit auth/test/databaseTest.php
-    - phpunit auth/test/tokenTest.php
+    - phpunit --version
+    - phpunit test/databaseTest.php
+    - phpunit test/tokenTest.php

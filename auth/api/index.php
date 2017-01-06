@@ -100,14 +100,15 @@
         $users=array();
         foreach (getAllUsers() as $user) {
             $addedUser['username'] = $user['USERNAME'];
-            $addedUser['password'] = $user['PASSWORD'];
+            $addedUser['name'] = $user['NAME'];
+            $addedUser['surname'] = $user['USERNAME'];
             $addedUser['email'] = $user['EMAIL'];
             $addedUser['genre'] = $user['GENRE'];
             $addedUser['autonomous_community'] = $user['AUTONOMOUS_COMMUNITY'];
             $addedUser['age'] = $user['AGE'];
             $users[] = $addedUser;
         }
-        echo json_encode($users);
+        echo json_encode(utf8ize($users),  JSON_UNESCAPED_UNICODE);
     }
 
     /**

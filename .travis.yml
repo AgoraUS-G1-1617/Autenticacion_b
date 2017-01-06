@@ -9,5 +9,6 @@ php:
 
 script:
     - phpunit --version
-    - phpunit test/databaseTest.php
-    - phpunit test/tokenTest.php
+    - cd test
+    - phpunit databaseTest.php
+    - phpunit tokenTest.php

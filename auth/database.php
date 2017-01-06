@@ -72,7 +72,7 @@ function getUser($user) {
                                     EMAIL, 
                                     GENRE, 
                                     AUTONOMOUS_COMMUNITY, 
-                                    AGE 
+                                    AGE,
                                     ROLE
                                     FROM USERS WHERE USERNAME=:user");
     $stmt->bindParam(':user', $user);

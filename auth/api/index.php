@@ -54,6 +54,19 @@
         echo "Bad Request. This method doesn't exists or the necessary parameters weren't provided";
     }
 
+    // Funcion auxiliar para evitar problemas con la codificacion para formatos Json
+
+    function utf8ize($d) {
+        if (is_array($d)) {
+            foreach ($d as $k => $v) {
+                $d[$k] = utf8ize($v);
+            }
+        } else if (is_string ($d)) {
+            return utf8_encode($d);
+        }
+        return $d;
+    }
+
     /**
     * \brief Obtener un usuario
     * \details Devuelve todos los datos de un usuario de la base de datos.
@@ -63,17 +76,19 @@
         header('HTTP/1.1 200 OK');
         header('Content-type: application/json');
         $user = getUser($username);
+
         $result['username'] = $user[0];
-        $result['password'] = $user[1];
-        $result['email'] = $user[2];
-        $result['genre'] = $user[3];
-        $result['autonomous_community'] = $user[4];
-        $result['age'] = $user[5];
+        $result['name'] = $user[2];
+        $result['surname'] = $user[3];
+        $result['email'] = $user[4];
+        $result['genre'] = $user[5];
+        $result['autonomous_community'] = $user[6];
+        $result['age'] = $user[7];
+        $result['role'] = $user[8];
 
-        echo json_encode($result);
-        return json_encode($result);
+        echo json_encode(utf8ize($result),  JSON_UNESCAPED_UNICODE);
+        return json_encode(utf8ize($result),  JSON_UNESCAPED_UNICODE);
     }
-
     /**
     * \brief Obtener usuarios
     * \details Devuelve todos los usuarios de la base de datos.
@@ -122,3 +137,7 @@
         echo json_encode($result);
         return json_encode($result);
     }
+
+
+
+

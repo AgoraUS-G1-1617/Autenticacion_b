@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+    <link rel="shortcut icon" href="favicon.ico">
+    
 <title>Facebook Login JavaScript Example</title>
 <meta charset="UTF-8">
 </head>

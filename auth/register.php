@@ -14,6 +14,8 @@ session_start();
 <!DOCTYPE html>
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <link rel="shortcut icon" href="favicon.ico">
+    
    <meta charset="utf-8">
    <link rel="stylesheet" href="layout.css" />
    <script src="lib/jquery-2.1.1.min.js"></script>

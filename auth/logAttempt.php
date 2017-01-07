@@ -9,6 +9,7 @@
 */
 
 include_once "auth.php";
+include_once "database.php";
 
 $user="";
 $pass="";
@@ -31,6 +32,11 @@ try{
     $loginRes = validUser($user, $pass);
     if ($loginRes) {
         setAuthCookie($user, $pass);
+
+
+
+
+
         header('Location: welcome.php');
     } else {
         error("wrongPass");

@@ -170,7 +170,8 @@ function createUser($username, $password, $name, $surname, $email, $genre, $age,
 
 function actualizarUsuario($inscripcion){
     $res=false;
-    $con =connect()
+    $con =connect();
+    
     if (isset($_REQUEST["username"]) || isset($_REQUEST["name"]) || isset($_REQUEST["surname"]) || isset($_REQUEST["email"])
     || isset($_REQUEST["genre"]) || isset($_REQUEST["aut"])
    || isset($_REQUEST["role"])){

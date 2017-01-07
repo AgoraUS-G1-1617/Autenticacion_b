@@ -100,11 +100,11 @@ session_start();
 </script>
 <?php
     if (!isset($_SESSION['registerForm'])) {
-        $registerForm['username'] = "";
+        $registerForm['username'] = $_POST['username'];
         $registerForm['password'] = "";
         $registerForm['name'] = "";
         $registerForm['surname'] = "";
-        $registerForm['email'] = $_POST['email'];
+        $registerForm['email'] = "";
         $registerForm['age'] = "";
     } else {
         $registerForm = $_SESSION['registerForm'];

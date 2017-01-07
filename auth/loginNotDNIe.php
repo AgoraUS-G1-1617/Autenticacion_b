@@ -30,6 +30,8 @@ if (isset($_REQUEST['error'])) {
 ?>
 <!DOCTYPE html>
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+
+    <link rel="shortcut icon" href="favicon.ico">
 	
 	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.mi.js"></script>

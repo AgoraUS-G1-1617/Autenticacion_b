@@ -13,6 +13,8 @@ include_once 'variables.php';
 
 <!DOCTYPE html>
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<link rel="shortcut icon" href="favicon.ico">
 	
 	<script type="text/javascript" src="style/bootstrap/js/bootstrap.js"></script>
 	<script type="text/javascript" src="style/bootstrap/js/bootstrap.mi.js"></script>
@@ -32,7 +34,7 @@ include_once 'variables.php';
 	<link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
 	
 
-<head>
+
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <title><?php echo TITLE?></title>
 </head>

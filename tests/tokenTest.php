@@ -10,8 +10,8 @@
 */
 
 chdir(dirname(__FILE__));
-include_once "../database.php";
-include_once "../auth.php";
+include_once "../auth/database.php";
+include_once "../auth/auth.php";
 
 /** 
 * \brief Clase para testear las funciones de operaciones con tokens.
@@ -57,7 +57,7 @@ class tokenTest extends PHPUnit_Framework_TestCase
             AGE TINYINT NOT NULL,
             PRIMARY KEY(U_ID)
             );
-            INSERT INTO USERS (USERNAME, PASSWORD, EMAIL, GENRE, AUTONOMOUS_COMMUNITY, AGE) 
+             INSERT INTO USERS (USERNAME, PASSWORD, NAME, SURNAME, EMAIL, GENRE, AUTONOMOUS_COMMUNITY, ROLE, AGE) 
                         VALUE(  "danayaher",
                                 "7a1b688bc2bb3cc02e0d55c4e0188fb0",
                                 "dan",
@@ -67,7 +67,7 @@ class tokenTest extends PHPUnit_Framework_TestCase
                                 "Andalucia",
                                 "USUARIO",
                                 "22");
-            INSERT INTO USERS (USERNAME, PASSWORD, EMAIL, GENRE, AUTONOMOUS_COMMUNITY, AGE) 
+            INSERT INTO USERS (USERNAME, PASSWORD, NAME, SURNAME, EMAIL, GENRE, AUTONOMOUS_COMMUNITY, ROLE, AGE) 
                         VALUE(  "dandelea",
                                 "9cf23ad866a1953b3dd93c80f595ea11",
                                 "dande",
@@ -77,7 +77,7 @@ class tokenTest extends PHPUnit_Framework_TestCase
                                 "Andalucia",
                                 "USUARIO",
                                 "22");
-            INSERT INTO USERS (USERNAME, PASSWORD, EMAIL, GENRE, AUTONOMOUS_COMMUNITY, AGE) 
+            INSERT INTO USERS (USERNAME, PASSWORD, NAME, SURNAME, EMAIL, GENRE, AUTONOMOUS_COMMUNITY, ROLE, AGE) 
                         VALUE(  "fidmazdel",
                                 "b746ac06bca08e9c60f1e67f9a978253",
                                 "fid",
@@ -87,7 +87,7 @@ class tokenTest extends PHPUnit_Framework_TestCase
                                 "Andalucia",
                                 "USUARIO",
                                 "24");
-            INSERT INTO USERS (USERNAME, PASSWORD, EMAIL, GENRE, AUTONOMOUS_COMMUNITY, AGE) 
+            INSERT INTO USERS (USERNAME, PASSWORD, NAME, SURNAME, EMAIL, GENRE, AUTONOMOUS_COMMUNITY, ROLE, AGE) 
                         VALUE(  "juarolsal",
                                 "9f1644a43dbfbaf05fda6ec642430b4d",
                                 "juan",
@@ -97,7 +97,7 @@ class tokenTest extends PHPUnit_Framework_TestCase
                                 "Andalucia",
                                 "USUARIO",
                                 "22");
-            INSERT INTO USERS (USERNAME, PASSWORD, EMAIL, GENRE, AUTONOMOUS_COMMUNITY, AGE) 
+            INSERT INTO USERS (USERNAME, PASSWORD, NAME, SURNAME, EMAIL, GENRE, AUTONOMOUS_COMMUNITY, ROLE, AGE) 
                         VALUE(  "alesanmed",
                                 "2c678f01c9222350776420037a69a1db",
                                 "ale",
@@ -107,7 +107,7 @@ class tokenTest extends PHPUnit_Framework_TestCase
                                 "Andalucia",
                                 "USUARIO",
                                 "22");
-            INSERT INTO USERS (USERNAME, PASSWORD, EMAIL, GENRE, AUTONOMOUS_COMMUNITY, AGE) 
+            INSERT INTO USERS (USERNAME, PASSWORD, NAME, SURNAME, EMAIL, GENRE, AUTONOMOUS_COMMUNITY, ROLE, AGE) 
                         VALUE(  "juacaslop",
                                 "f8e70dcaaf443f4fadd34959adaca9d2",
                                 "juan",

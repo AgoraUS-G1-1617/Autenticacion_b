@@ -81,6 +81,30 @@ function getUser($user) {
 }
 
 /**
+* \brief Consultar usuario
+* \details Consultar toda la información de un usuario en la base de
+* datos buscando por su nombre de usuario.
+* \param $user Nombre de usuario
+* \return Usuario consultado.
+*/
+function getUserByID($id) {
+    $con = connect();
+    $stmt = $con->prepare("SELECT   U_ID,
+                                    USERNAME, 
+                                    PASSWORD,
+                                    NAME,
+                                    SURNAME,
+                                    EMAIL, 
+                                    GENRE, 
+                                    AUTONOMOUS_COMMUNITY, 
+                                    AGE,
+                                    ROLE
+                                    FROM USERS WHERE U_ID=:id");
+    $stmt->bindParam(':id', $id);
+    $stmt->execute();
+    return $stmt->fetch();
+}
+/**
 * \brief Consultar email
 */
 function getEmail($email) {
@@ -142,4 +166,38 @@ function createUser($username, $password, $name, $surname, $email, $genre, $age,
     $stmt->bindParam(':age', $age);
     $stmt->bindParam(':role', $role);
     $stmt->execute();
+}
+
+function actualizarUsuario($inscripcion){
+    $res=false;
+    $con =connect()
+    if (isset($_REQUEST["username"]) || isset($_REQUEST["name"]) || isset($_REQUEST["surname"]) || isset($_REQUEST["email"])
+    || isset($_REQUEST["genre"]) || isset($_REQUEST["aut"])
+   || isset($_REQUEST["role"])){
+        
+        $stmt = $conexion->prepare("UPDATE usuarios SET USERNAME=?,NAME=?,SURNAME=?,EMAIL=?,GENRE=?,AUTONOMOUS_COMMUNITY=?,
+        ROLE=? WHERE U_ID=?");
+        
+        $stmt->bind_param('sssssssi', $USERNAME, $NAME, $SURNAME, $EMAIL, $GENRE, $AUTONOMOUS_COMMUNITY,
+            $ROLE, $U_ID);
+
+        $U_ID = $inscripcion['id'];
+        $NAME = $inscripcion['name'];
+        $SURNAME = $inscripcion['surname'];
+        $EMAIL = $inscripcion['email'];
+        $GENRE = $inscripcion['genre'];
+        $ROLE = $inscripcion['role'];
+        $AUTONOMOUS_COMMUNITY = $inscripcion['aut'];
+    
+
+        $stmt->execute();
+
+        if($stmt){
+            $res = true;
+        }
+
+        $stmt->close();
+    }
+
+    return $res;
 }

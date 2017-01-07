@@ -5,7 +5,7 @@ use Abraham\TwitterOAuth\TwitterOAuth;
  
 session_start();
  
-$config = require_once 'config.php';
+$config = require_once 'configTwitter.php';
 
 // create TwitterOAuth object
 $twitteroauth = new TwitterOAuth($config['consumer_key'], $config['consumer_secret']);
@@ -16,7 +16,7 @@ $request_token = $twitteroauth->oauth(
         'oauth_callback' => $config['url_callback']
     ]
 );
- 
+
 // throw exception if something gone wrong
 if($twitteroauth->getLastHttpCode() != 200) {
     throw new \Exception('There was a problem performing this request');

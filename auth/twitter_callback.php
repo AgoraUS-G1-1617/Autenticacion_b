@@ -5,7 +5,7 @@ use Abraham\TwitterOAuth\TwitterOAuth;
  
 session_start();
  
-$config = require_once 'config.php';
+$config = require_once 'configTwitter.php';
 
 $oauth_verifier = filter_input(INPUT_GET, 'oauth_verifier');
  

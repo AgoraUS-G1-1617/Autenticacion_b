@@ -1,4 +1,5 @@
 ﻿<?php
+session_start();
 /** 
 * @file
 * \brief Operación de login
@@ -33,7 +34,13 @@ try{
     if ($loginRes) {
         setAuthCookie($user, $pass);
 
-
+        $usuario =  getUser($user);
+        var_dump($usuario);
+        if($usuario["ROLE"]=="ADMIN"){
+            $_SESSION["administradorCorrecto"] = TRUE;
+        }else{
+            $_SESSION["administradorCorrecto"] = FALSE;
+        }
 
 
 

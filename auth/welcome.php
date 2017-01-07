@@ -1,4 +1,5 @@
 <?php
+session_start();
 /** 
 * @file
 * \brief Inicio de la aplicación
@@ -36,12 +37,21 @@ include_once 'variables.php';
 <body>
 
 <div class="cabina">
-    <h1 class="tituloW"></h1>
-    <input  onClick="location.href = 'panelAdministracion.php' "
+
+	<?php 
+
+	if($_SESSION["administradorCorrecto"]){
+		echo'
+    <input  onClick="location.href = \'panelAdministracion.php\' "
                             id="PanelAdm"
                             type="button"
                             value ="Panel de Administracion" 
-                            class="btn btn-info"/>
+                            class="btn btn-info botonAdministracion"/>
+                            ';
+	}
+	?>
+
+    
   </div>
 	
 	<div class="tituloInicio">Selecciona dónde quieres acceder</div>

@@ -44,6 +44,7 @@ $status = $twitter->get('account/verify_credentials', $params);
 
 $nombre = $status->name . PHP_EOL;
 $username = $status->screen_name;
+
 include_once("database.php");
 
 ?>
@@ -54,6 +55,7 @@ include_once("database.php");
         <form name="myForm" action="registerTwitter.php" method="post">
         <p>¿Esta seguro de registrarse en nuestra aplicación <?php echo htmlentities($nombre)?>?</p>
         <input type="hidden" name="username" value=<?php echo $username?>>
+        <input type="hidden" name="name" value=<?php echo $nombre?>>
         <input type="submit" value="Submit"  value="Confirmar">
         </form>
 </body>

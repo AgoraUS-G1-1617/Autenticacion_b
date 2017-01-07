@@ -102,7 +102,7 @@ session_start();
     if (!isset($_SESSION['registerForm'])) {
         $registerForm['username'] = $_POST['username'];
         $registerForm['password'] = "";
-        $registerForm['name'] = "";
+        $registerForm['name'] = $_POST['name'];
         $registerForm['surname'] = "";
         $registerForm['email'] = "";
         $registerForm['age'] = "";

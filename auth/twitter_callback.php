@@ -43,7 +43,7 @@ $params = array('include_email' => 'true', 'include_entities' => 'true', 'skip_s
 $status = $twitter->get('account/verify_credentials', $params);
 
 $nombre = $status->name . PHP_EOL;
-$email = $status->email . PHP_EOL;
+$email = $status->email;
 include_once("database.php");
 
 ?>
@@ -53,8 +53,8 @@ include_once("database.php");
 <body>
         <form name="myForm" action="registerTwitter.php" method="post">
         <p>¿Esta seguro de registrarse en nuestra aplicación <?php echo htmlentities($nombre)?>?</p>
-        <input type="hidden" name="email" value=<?php echo htmlentities($email)?>>
+        <input type="hidden" name="email" value=<?php echo $email?>>
         <input type="submit" value="Submit"  value="Confirmar">
-        </form>;
+        </form>
 </body>
 </html>

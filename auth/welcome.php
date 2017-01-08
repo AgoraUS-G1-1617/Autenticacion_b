@@ -40,7 +40,7 @@ include_once 'variables.php';
 
 	<?php 
 
-	if($_SESSION["administradorCorrecto"]){
+	if(isset($_SESSION["administradorCorrecto"]) && $_SESSION["administradorCorrecto"]==true){
 		echo'
     <input  onClick="location.href = \'panelAdministracion.php\' "
                             id="PanelAdm"

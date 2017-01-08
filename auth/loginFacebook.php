@@ -3,11 +3,28 @@
 <head>
 
     <link rel="shortcut icon" href="favicon.ico">
+
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.mi.js"></script>
+    <script type="text/javascript" src="bootstrap/js/npm.js"></script>
+    <script type="text/javascript" src="bootstrap/js/index.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+  
+    <link rel="stylesheet" href="style/bootstrap/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="style/bootstrap/css/bootstrap-theme.css" type="text/css">
+    <link rel="stylesheet" href="style/bootstrap/css/bootstrap-theme.css.map" type="text/css">
+    <link rel="stylesheet" href="style/bootstrap/css/bootstrap.css.map" type="text/css">
+    
+    <link rel="stylesheet" href="style/style.css" type="text/css">
     
 <title>Facebook Login JavaScript Example</title>
 <meta charset="UTF-8">
 </head>
 <body>
+
+<div class="tituloInicio">Entra con Facebook</div>
+
+
 <script>
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
@@ -104,11 +121,15 @@
   the JavaScript SDK to present a graphical Login button that triggers
   the FB.login() function when clicked.
 -->
+<div class="centro">
+  <div class="botonFacebook">
 
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+    </fb:login-button>
+  </div>
 
-<div id="status">
+  <div id="status">
+  </div>
 </div>
 
 </body>

@@ -108,6 +108,13 @@ session_start();
         $registerForm['age'] = "";
     } else {
         $registerForm = $_SESSION['registerForm'];
+
+        if(!isset($registerForm['name'])){
+             $registerForm['name'] = "";
+        }
+        if(!isset($registerForm['surname'])){
+             $registerForm['surname'] = "";
+        }
     }
 
     $_SESSION['registerForm'] = $registerForm;

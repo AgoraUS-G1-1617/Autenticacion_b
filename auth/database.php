@@ -22,6 +22,7 @@ function connect() {
 * \brief Crear BD
 * \details Montar la base de datos con la tabla de usuarios vacía.
 */
+
 function setUp() {
     $con = connect();
     $stmt = $con->query('
@@ -65,7 +66,8 @@ function setUp() {
 */
 function getUser($user) {
     $con = connect();
-    $stmt = $con->prepare("SELECT   USERNAME, 
+    $stmt = $con->prepare("SELECT   U_ID,
+                                    USERNAME, 
                                     PASSWORD,
                                     NAME,
                                     SURNAME,
@@ -172,32 +174,58 @@ function actualizarUsuario($inscripcion){
     $res=false;
     $con =connect();
     
-    if (isset($_REQUEST["username"]) || isset($_REQUEST["name"]) || isset($_REQUEST["surname"]) || isset($_REQUEST["email"])
-    || isset($_REQUEST["genre"]) || isset($_REQUEST["aut"])
-   || isset($_REQUEST["role"])){
-        
-        $stmt = $conexion->prepare("UPDATE usuarios SET USERNAME=?,NAME=?,SURNAME=?,EMAIL=?,GENRE=?,AUTONOMOUS_COMMUNITY=?,
-        ROLE=? WHERE U_ID=?");
-        
-        $stmt->bind_param('sssssssi', $USERNAME, $NAME, $SURNAME, $EMAIL, $GENRE, $AUTONOMOUS_COMMUNITY,
-            $ROLE, $U_ID);
+    if (!empty($inscripcion["username"]) && !empty($inscripcion["name"]) && !empty($inscripcion["surname"]) && !empty($inscripcion["email"])
+    && !empty($inscripcion["genre"]) && !empty($inscripcion["age"]) && !empty($inscripcion["aut"])
+   && !empty($inscripcion["role"])){
 
-        $U_ID = $inscripcion['id'];
-        $NAME = $inscripcion['name'];
-        $SURNAME = $inscripcion['surname'];
-        $EMAIL = $inscripcion['email'];
-        $GENRE = $inscripcion['genre'];
-        $ROLE = $inscripcion['role'];
-        $AUTONOMOUS_COMMUNITY = $inscripcion['aut'];
+
+    $stmt = $con->prepare("UPDATE USERS SET USERNAME=:username, 
+                                            PASSWORD=:password,
+                                            NAME=:name,
+                                            SURNAME=:surname,
+                                            EMAIL=:email, 
+                                            GENRE=:genre, 
+                                            AUTONOMOUS_COMMUNITY=:autonomousCommunity, 
+                                            AGE=:age,
+                                            ROLE=:role WHERE U_ID=:id");
+
     
+    $stmt->bindParam(':id', $id);
+    $stmt->bindParam(':username', $username);
+    $stmt->bindParam(':password', $password);
+    $stmt->bindParam(':name', $name);
+    $stmt->bindParam(':surname', $surname);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':genre', $genre);
+    $stmt->bindParam(':autonomousCommunity', $aut);
+    $stmt->bindParam(':age', $age);
+    $stmt->bindParam(':role', $role);
+   
 
-        $stmt->execute();
+    $id = $inscripcion['id'];
+    $username = $inscripcion['username'];
+    $password = $inscripcion['password'];
+    $name = $inscripcion['name'];
+    $surname = $inscripcion['surname'];
+    $email = $inscripcion['email'];
+    $genre = $inscripcion['genre'];
+    $aut = $inscripcion['aut'];
+    $age = $inscripcion['age'];
+    $role = $inscripcion['role'];
+
+
+    $stmt->execute();
+
+
+
+
+
+
+
 
         if($stmt){
             $res = true;
         }
-
-        $stmt->close();
     }
 
     return $res;

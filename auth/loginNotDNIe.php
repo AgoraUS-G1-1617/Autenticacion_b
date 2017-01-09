@@ -30,6 +30,8 @@ if (isset($_REQUEST['error'])) {
 ?>
 <!DOCTYPE html>
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+
+    <link rel="shortcut icon" href="favicon.ico">
 	
 	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.mi.js"></script>
@@ -44,12 +46,14 @@ if (isset($_REQUEST['error'])) {
     <link rel="stylesheet" href="style/bootstrap/css/bootstrap.css.map" type="text/css">
     
     <link rel="stylesheet" href="style/style.css" type="text/css">
+
+    <link rel="stylesheet" href="style/style.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <title><?php echo TITLE?></title>
-    <link rel="stylesheet" href="style/style.css" type="text/css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    
 </head>
 <body>
 	<div class="tituloInicio">Entrar sin DNIe</div>

@@ -1,13 +1,12 @@
 <?php
-/**
-* Facebook Access
-* Author: evilnapsis
-**/
 
 session_start();
-if(isset($_SESSION["fb_access_token"])){
-	session_destroy();
+
+if(isset($_SESSION["administradorCorrecto"])){
+	unset($_SESSION["administradorCorrecto"]);
+	Header("Location: index.php");
+}else{
+	Header("Location: index.php");
 }
-header("Location: index.php");
 
 ?>

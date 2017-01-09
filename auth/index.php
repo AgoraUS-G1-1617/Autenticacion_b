@@ -6,27 +6,15 @@
 * los mensajes de error de logAttempt.php y define la estructura del layout.
 * \author auth.agoraUS
 */
-
-include_once 'variables.php';
-require_once "Facebook/autoload.php";
-
 session_start();
-
-$fb = new Facebook\Facebook([
-  'app_id' => '1166797976702364', // Replace {app-id} with your app id
-  'app_secret' => '21a7d98d0f739cef31c6dc5f43f37716',
-  'default_graph_version' => 'v2.8',
-  ]);
-
-$helper = $fb->getRedirectLoginHelper();
-
-$permissions = ['email']; // Optional permissions
-$loginUrl = $helper->getLoginUrl('https://beta.authb.agoraus1.egc.duckdns.org/fb-callback.php', $permissions);
-
+include_once 'variables.php';
 
 ?>
+
 <!DOCTYPE html>
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<link rel="shortcut icon" href="favicon.ico">
 	
 	<script type="text/javascript" src="style/bootstrap/js/bootstrap.js"></script>
 	<script type="text/javascript" src="style/bootstrap/js/bootstrap.mi.js"></script>
@@ -46,7 +34,7 @@ $loginUrl = $helper->getLoginUrl('https://beta.authb.agoraus1.egc.duckdns.org/fb
 	<link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
 	
 
-<head>
+
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <title><?php echo TITLE?></title>
 </head>
@@ -56,16 +44,12 @@ $loginUrl = $helper->getLoginUrl('https://beta.authb.agoraus1.egc.duckdns.org/fb
 	
 	<div class="principal">
 	  <div class="col-md-4">
-		<h1>Entrar con Facebook</h1>
-		
-		<?php echo'<input onClick="location.href = \''.  htmlspecialchars($loginUrl) .'\'"
-		id="loginDNIe" 
+		<h1>Entrar con Redes Sociales</h1>
+		<input  onClick="location.href = 'loginRedesSociales.php' "
+                            id="loginFacebook" 
                             type="button"
                             value ="Entra" 
-                           	class="btn btn-info"/>'; ?>
-
-
-		
+                           	class="btn btn-info"/>
 	  </div>
 
 	  <div class="col-md-4">
@@ -85,6 +69,7 @@ $loginUrl = $helper->getLoginUrl('https://beta.authb.agoraus1.egc.duckdns.org/fb
                             value ="Registrate" 
                            	class="btn btn-info"/>
 	  </div>
+
 	</div>
 	
 	

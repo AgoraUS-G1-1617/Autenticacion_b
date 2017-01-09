@@ -1,4 +1,5 @@
 ﻿<?php
+session_start();
 /** 
 * @file
 * \brief Operación de login
@@ -9,6 +10,7 @@
 */
 
 include_once "auth.php";
+include_once "database.php";
 
 $user="";
 $pass="";
@@ -31,6 +33,17 @@ try{
     $loginRes = validUser($user, $pass);
     if ($loginRes) {
         setAuthCookie($user, $pass);
+
+        $usuario =  getUser($user);
+        var_dump($usuario);
+        if($usuario["ROLE"]=="ADMIN"){
+            $_SESSION["administradorCorrecto"] = TRUE;
+        }else{
+            $_SESSION["administradorCorrecto"] = FALSE;
+        }
+
+
+
         header('Location: welcome.php');
     } else {
         error("wrongPass");

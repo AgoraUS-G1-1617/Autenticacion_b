@@ -11,6 +11,8 @@ session_start();
 include_once('database.php');
 include_once('auth.php');
 
+$uri = $_POST['urlAnterior'];
+
 $error = 0;
 if (isset($_SESSION['registerForm'])) {
     $registerForm = array();
@@ -95,26 +97,74 @@ if (isset($_SESSION['registerForm'])) {
     } else {
         $registerForm['age'] = $_REQUEST['age'];
     }
+    if (!isset($_REQUEST['name']) || $_REQUEST['name'] == "") {
+        $registerForm['name'] = $_REQUEST['name'];
+        $error += 47536;
+    }else {
+        $registerForm['name'] = $_REQUEST['name'];
+    }
+    if (!isset($_REQUEST['surname']) || $_REQUEST['surname'] == "") {
+        $registerForm['surname'] = $_REQUEST['surname'];
+        $error += 95072;
+    }else {
+        $registerForm['surname'] = $_REQUEST['surname'];
+    }
+    $registerForm['role'] = $_REQUEST['role'];
 
     if ($error == 0) {
         try{
             createUser($registerForm['username'], 
                         md5($registerForm['password']), 
+                        $registerForm['name'],
+                        $registerForm['surname'],
                         $registerForm['email'], 
                         $registerForm['genre'], 
                         $registerForm['age'], 
-                        $registerForm['autonomous_community']);
+                        $registerForm['autonomous_community'],
+                        $registerForm['role']);
             session_unset($_SESSION['registerForm']);
             header("Location: index.php");
         }catch(Exception $e) {
             $error += 1;
             $_SESSION['registerForm'] = $registerForm;
-            header("Location: register.php?error=".$error);
+
+            switch( $uri ) { 
+            case '/register.php': 
+                header("Location: register.php?error=".$error);
+                break; 
+            case '/registerFacebook.php': 
+                header("Location: registerFacebook.php?error=".$error);
+                break; 
+            case '/registerTwitter.php': 
+                header("Location: registerTwitter.php?error=".$error);
+                break; 
+            } 
+           
         }
     } else {
         $_SESSION['registerForm'] = $registerForm;
-        header("Location: register.php?error=".$error);
+        switch( $uri ) { 
+            case '/register.php': 
+                header("Location: register.php?error=".$error);
+                break; 
+            case '/registerFacebook.php': 
+                header("Location: registerFacebook.php?error=".$error);
+                break; 
+            case '/registerTwitter.php': 
+                header("Location: registerTwitter.php?error=".$error);
+                break; 
+            } 
     }
 } else {
-    header('Location: register.php');
+    switch( $uri ) { 
+            case '/register.php': 
+                header("Location: register.php?error=".$error);
+                break; 
+            case '/registerFacebook.php': 
+                header("Location: registerFacebook.php?error=".$error);
+                break; 
+            case '/registerTwitter.php': 
+                header("Location: registerTwitter.php?error=".$error);
+                break; 
+            } 
 }

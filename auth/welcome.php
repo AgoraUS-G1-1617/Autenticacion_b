@@ -1,4 +1,5 @@
 <?php
+session_start();
 /** 
 * @file
 * \brief Inicio de la aplicación
@@ -12,6 +13,8 @@ include_once 'variables.php';
 ?>
 <!DOCTYPE html>
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<link rel="shortcut icon" href="favicon.ico">
 	
 	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.mi.js"></script>
@@ -27,20 +30,38 @@ include_once 'variables.php';
     <link rel="stylesheet" href="style/style.css" type="text/css">
 	
 
-<head>
+
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <title><?php echo TITLE?></title>
 </head>
 <body>
+
+<div class="cabina">
+
+	<?php 
+
+	if(isset($_SESSION["administradorCorrecto"]) && $_SESSION["administradorCorrecto"]==true){
+		echo'
+    <input  onClick="location.href = \'panelAdministracion.php\' "
+                            id="PanelAdm"
+                            type="button"
+                            value ="Panel de Administracion" 
+                            class="btn btn-info botonAdministracion"/>
+                            ';
+	}
+	?>
+
+    
+  </div>
 	
 	<div class="tituloInicio">Selecciona dónde quieres acceder</div>
 	
 	<div class="row">
   <div class="col-md-4">
-  	<div class="loginDNIe">
+  	<div class="censo">
 		<h1 class="tituloW">Censo</h1>
-		<input  onClick="location.href = 'http://localhost:90/ADMCensus/' "
-                            id="loginDNIe" 
+		<input  onClick="location.href = 'https://censos.agoraus1.egc.duckdns.org/' "
+                            id="censoId" 
                             type="button"
                             value ="Entra" 
                            	class="btn btn-info"/>
@@ -48,10 +69,10 @@ include_once 'variables.php';
   </div>
   
   <div class="col-md-4">
-  	<div class="loginNotDNIe">
+  	<div class="cabina">
 		<h1 class="tituloW">Cabina</h1>
-		<input  onClick="location.href = 'http://localhost:90/Cabina/' "
-                            id="loginNotDNIe" 
+		<input  onClick="location.href = 'https://cvotacion.agoraus1.egc.duckdns.org/' "
+                            id="cabinaId"
                             type="button"
                             value ="Entra" 
                            	class="btn btn-info"/>
@@ -59,12 +80,12 @@ include_once 'variables.php';
   </div>
   
   <div class="col-md-4">
-  	<div class="register">
+  	<div class="deliberaciones">
 		<h1 class="tituloW">Deliberaciones</h1>
-		<input  onClick="location.href = 'http://localhost:90/Deliberaciones/' "
-                            id="register" 
+		<input  onClick="location.href = 'https://deliberaciones.agoraus1.egc.duckdns.org/' "
+                            id="deliberacionesId" 
                             type="button"
-                            value ="Registrate" 
+                            value ="Entra" 
                            	class="btn btn-info"/>
 	</div>
   </div>

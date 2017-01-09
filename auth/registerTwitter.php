@@ -21,15 +21,15 @@ session_start();
    <script src="lib/jquery-2.1.1.min.js"></script>
    
    <script type="text/javascript" src="style/bootstrap/js/bootstrap.js"></script>
-	<script type="text/javascript" src="style/bootstrap/js/bootstrap.mi.js"></script>
-	<script type="text/javascript" src="style/bootstrap/js/npm.js"></script>
-	
-	<link rel="stylesheet" href="style/bootstrap/css/bootstrap.css" type="text/css">
-	<link rel="stylesheet" href="style/bootstrap/css/bootstrap-theme.css" type="text/css">
-	<link rel="stylesheet" href="style/bootstrap/css/bootstrap-theme.css.map" type="text/css">
-	<link rel="stylesheet" href="style/bootstrap/css/bootstrap.css.map" type="text/css">
-	
-	<link rel="stylesheet" href="style/style.css" type="text/css">
+    <script type="text/javascript" src="style/bootstrap/js/bootstrap.mi.js"></script>
+    <script type="text/javascript" src="style/bootstrap/js/npm.js"></script>
+    
+    <link rel="stylesheet" href="style/bootstrap/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="style/bootstrap/css/bootstrap-theme.css" type="text/css">
+    <link rel="stylesheet" href="style/bootstrap/css/bootstrap-theme.css.map" type="text/css">
+    <link rel="stylesheet" href="style/bootstrap/css/bootstrap.css.map" type="text/css">
+    
+    <link rel="stylesheet" href="style/style.css" type="text/css">
    
    <title><?php echo TITLE?></title>
    <script type="text/javascript">
@@ -100,21 +100,14 @@ session_start();
 </script>
 <?php
     if (!isset($_SESSION['registerForm'])) {
-        $registerForm['username'] = "";
+        $registerForm['username'] = $_POST['username'];
         $registerForm['password'] = "";
-        $registerForm['name'] = "";
-        $registerForm['surname'] ="";
+        $registerForm['name'] = $_POST['name'];
+        $registerForm['surname'] = "";
         $registerForm['email'] = "";
         $registerForm['age'] = "";
     } else {
         $registerForm = $_SESSION['registerForm'];
-
-        if(!isset($registerForm['name'])){
-             $registerForm['name'] = "";
-        }
-        if(!isset($registerForm['surname'])){
-             $registerForm['surname'] = "";
-        }
     }
 
     $_SESSION['registerForm'] = $registerForm;
@@ -218,12 +211,12 @@ session_start();
 
                 <label for="username" class="labelForm"> <i class="glyphicon glyphicon-user"></i> Nombre de usuario:</label>
                 <input  type="text" id="username" name="username" class="inputForm" value=<?php echo htmlentities($registerForm['username']) ?>>
-  			
+            
                 <br>
 
-  				<label for="email" class="labelForm"><i class="glyphicon glyphicon-envelope"></i> Correo electrónico:</label>
+                <label for="email" class="labelForm"><i class="glyphicon glyphicon-envelope"></i> Correo electrónico:</label>
                 <input  type="text" id="email" name="email" class="inputForm" value=<?php echo htmlentities($registerForm['email']) ?>>
-  			
+            
 <br />
 <br />
                 
@@ -248,7 +241,7 @@ session_start();
 
                 <br>
 
-				<label for="genre" class="labelForm">Género:</label>
+                <label for="genre" class="labelForm">Género:</label>
                     <select id="genre" name="genre" class="inputForm">
                         <option value="default">----------</option>
                         <option value="Masculino">Masculino</option>
@@ -289,20 +282,21 @@ session_start();
 
                     <input type="text" name="role" id="role" class="inputForm" value="USUARIO" hidden="true" />
                     <input type="text" name="urlAnterior" id="urlAnterior" class="inputForm" value=<?php echo $_SERVER['REQUEST_URI']; ?> hidden="true" />
+                    
 
 <br>
 <br>
 <br>
                 
                 <div align="center">  
-                	<input  type="submit" 
+                    <input  type="submit" 
                             id="submit" 
                             value ="Enviar" 
-                           	class="btn btn-info" align="center"/>
+                            class="btn btn-info" align="center"/>
                 </div> 
                  
-                           	
-		
+                            
+        
     </form>
     </div>
     <br />

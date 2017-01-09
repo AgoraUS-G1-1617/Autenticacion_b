@@ -22,6 +22,7 @@ function connect() {
 * \brief Crear BD
 * \details Montar la base de datos con la tabla de usuarios vacía.
 */
+
 function setUp() {
     $con = connect();
     $stmt = $con->query('
@@ -30,6 +31,8 @@ function setUp() {
         U_ID INT AUTO_INCREMENT,
         USERNAME VARCHAR(40) UNIQUE,
         PASSWORD VARCHAR(40),
+        NAME VARCHAR(30) NOT NULL,
+        SURNAME VARCHAR(30) NOT NULL,
         EMAIL VARCHAR(100) UNIQUE,
         GENRE ENUM("Femenino","Masculino") NOT NULL,
         AUTONOMOUS_COMMUNITY ENUM(  "Andalucia",
@@ -47,6 +50,7 @@ function setUp() {
                                     "Cantabria",
                                     "Pais Vasco",
                                     "Navarra") NOT NULL,
+        ROLE ENUM("USUARIO","ADMIN","CREADOR_VOTACIONES") NOT NULL DEFAULT "USUARIO",
         AGE TINYINT NOT NULL,
         PRIMARY KEY(U_ID)
         );
@@ -62,18 +66,46 @@ function setUp() {
 */
 function getUser($user) {
     $con = connect();
-    $stmt = $con->prepare("SELECT   USERNAME, 
-                                    PASSWORD, 
+    $stmt = $con->prepare("SELECT   U_ID,
+                                    USERNAME, 
+                                    PASSWORD,
+                                    NAME,
+                                    SURNAME,
                                     EMAIL, 
                                     GENRE, 
                                     AUTONOMOUS_COMMUNITY, 
-                                    AGE 
+                                    AGE,
+                                    ROLE
                                     FROM USERS WHERE USERNAME=:user");
     $stmt->bindParam(':user', $user);
     $stmt->execute();
     return $stmt->fetch();
 }
 
+/**
+* \brief Consultar usuario
+* \details Consultar toda la información de un usuario en la base de
+* datos buscando por su nombre de usuario.
+* \param $user Nombre de usuario
+* \return Usuario consultado.
+*/
+function getUserByID($id) {
+    $con = connect();
+    $stmt = $con->prepare("SELECT   U_ID,
+                                    USERNAME, 
+                                    PASSWORD,
+                                    NAME,
+                                    SURNAME,
+                                    EMAIL, 
+                                    GENRE, 
+                                    AUTONOMOUS_COMMUNITY, 
+                                    AGE,
+                                    ROLE
+                                    FROM USERS WHERE U_ID=:id");
+    $stmt->bindParam(':id', $id);
+    $stmt->execute();
+    return $stmt->fetch();
+}
 /**
 * \brief Consultar email
 */
@@ -92,7 +124,14 @@ function getEmail($email) {
 */
 function getAllUsers() {
     $con = connect();
-    $stmt = $con->prepare("SELECT USERNAME, PASSWORD, EMAIL, GENRE, AUTONOMOUS_COMMUNITY, AGE FROM USERS");
+    $stmt = $con->prepare("SELECT U_ID, USERNAME, PASSWORD, NAME, SURNAME, EMAIL, GENRE, AUTONOMOUS_COMMUNITY, AGE, ROLE FROM USERS");
+    $stmt->execute();
+    return $stmt->fetchAll();
+}
+
+function getAdministrators() {
+    $con = connect();
+    $stmt = $con->prepare("SELECT U_ID, USERNAME, PASSWORD, NAME, SURNAME, EMAIL, GENRE, AUTONOMOUS_COMMUNITY, AGE, ROLE FROM USERS where ROLE='ADMIN'");
     $stmt->execute();
     return $stmt->fetchAll();
 }
@@ -107,20 +146,87 @@ function getAllUsers() {
 * \param $age Edad
 * \param $autonomous_community Comunidad autónoma
 */
-function createUser($username, $password, $email, $genre, $age, $autonomousCommunity) {
+function createUser($username, $password, $name, $surname, $email, $genre, $age, $autonomousCommunity, $role) {
     $con = connect();
     $stmt = $con->prepare("INSERT INTO USERS VALUES(null, 
                                                     :username, 
                                                     :password, 
+                                                    :name,
+                                                    :surname,
                                                     :email, 
                                                     :genre, 
                                                     :autonomousCommunity, 
-                                                    :age)");
+                                                    :age,
+                                                    :role)");
     $stmt->bindParam(':username', $username);
     $stmt->bindParam(':password', $password);
+    $stmt->bindParam(':name', $name);
+    $stmt->bindParam(':surname', $surname);
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':genre', $genre);
     $stmt->bindParam(':autonomousCommunity', $autonomousCommunity);
     $stmt->bindParam(':age', $age);
+    $stmt->bindParam(':role', $role);
     $stmt->execute();
+}
+
+function actualizarUsuario($inscripcion){
+    $res=false;
+    $con =connect();
+    
+    if (!empty($inscripcion["username"]) && !empty($inscripcion["name"]) && !empty($inscripcion["surname"]) && !empty($inscripcion["email"])
+    && !empty($inscripcion["genre"]) && !empty($inscripcion["age"]) && !empty($inscripcion["aut"])
+   && !empty($inscripcion["role"])){
+
+
+    $stmt = $con->prepare("UPDATE USERS SET USERNAME=:username, 
+                                            PASSWORD=:password,
+                                            NAME=:name,
+                                            SURNAME=:surname,
+                                            EMAIL=:email, 
+                                            GENRE=:genre, 
+                                            AUTONOMOUS_COMMUNITY=:autonomousCommunity, 
+                                            AGE=:age,
+                                            ROLE=:role WHERE U_ID=:id");
+
+    
+    $stmt->bindParam(':id', $id);
+    $stmt->bindParam(':username', $username);
+    $stmt->bindParam(':password', $password);
+    $stmt->bindParam(':name', $name);
+    $stmt->bindParam(':surname', $surname);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':genre', $genre);
+    $stmt->bindParam(':autonomousCommunity', $aut);
+    $stmt->bindParam(':age', $age);
+    $stmt->bindParam(':role', $role);
+   
+
+    $id = $inscripcion['id'];
+    $username = $inscripcion['username'];
+    $password = $inscripcion['password'];
+    $name = $inscripcion['name'];
+    $surname = $inscripcion['surname'];
+    $email = $inscripcion['email'];
+    $genre = $inscripcion['genre'];
+    $aut = $inscripcion['aut'];
+    $age = $inscripcion['age'];
+    $role = $inscripcion['role'];
+
+
+    $stmt->execute();
+
+
+
+
+
+
+
+
+        if($stmt){
+            $res = true;
+        }
+    }
+
+    return $res;
 }

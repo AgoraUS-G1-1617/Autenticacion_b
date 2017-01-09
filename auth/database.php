@@ -36,20 +36,20 @@ function setUp() {
         EMAIL VARCHAR(100) UNIQUE,
         GENRE ENUM("Femenino","Masculino") NOT NULL,
         AUTONOMOUS_COMMUNITY ENUM(  "Andalucia",
-                                    "Murcia",
-                                    "Extremadura",
-                                    "Castilla la Mancha",
-                                    "Comunidad Valenciana",
-                                    "Madrid",
-                                    "Castilla y Leon",
-                                    "Aragon",
-                                    "Cataluña",
-                                    "La Rioja",
-                                    "Galicia",
-                                    "Asturias",
-                                    "Cantabria",
-                                    "Pais Vasco",
-                                    "Navarra") NOT NULL,
+        "Murcia",
+        "Extremadura",
+        "Castilla la Mancha",
+        "Comunidad Valenciana",
+        "Madrid",
+        "Castilla y Leon",
+        "Aragon",
+        "Cataluña",
+        "La Rioja",
+        "Galicia",
+        "Asturias",
+        "Cantabria",
+        "Pais Vasco",
+        "Navarra") NOT NULL,
         ROLE ENUM("USUARIO","ADMIN","CREADOR_VOTACIONES") NOT NULL DEFAULT "USUARIO",
         AGE TINYINT NOT NULL,
         PRIMARY KEY(U_ID)
@@ -67,16 +67,16 @@ function setUp() {
 function getUser($user) {
     $con = connect();
     $stmt = $con->prepare("SELECT   U_ID,
-                                    USERNAME, 
-                                    PASSWORD,
-                                    NAME,
-                                    SURNAME,
-                                    EMAIL, 
-                                    GENRE, 
-                                    AUTONOMOUS_COMMUNITY, 
-                                    AGE,
-                                    ROLE
-                                    FROM USERS WHERE USERNAME=:user");
+        USERNAME, 
+        PASSWORD,
+        NAME,
+        SURNAME,
+        EMAIL, 
+        GENRE, 
+        AUTONOMOUS_COMMUNITY, 
+        AGE,
+        ROLE
+        FROM USERS WHERE USERNAME=:user");
     $stmt->bindParam(':user', $user);
     $stmt->execute();
     return $stmt->fetch();
@@ -92,16 +92,16 @@ function getUser($user) {
 function getUserByID($id) {
     $con = connect();
     $stmt = $con->prepare("SELECT   U_ID,
-                                    USERNAME, 
-                                    PASSWORD,
-                                    NAME,
-                                    SURNAME,
-                                    EMAIL, 
-                                    GENRE, 
-                                    AUTONOMOUS_COMMUNITY, 
-                                    AGE,
-                                    ROLE
-                                    FROM USERS WHERE U_ID=:id");
+        USERNAME, 
+        PASSWORD,
+        NAME,
+        SURNAME,
+        EMAIL, 
+        GENRE, 
+        AUTONOMOUS_COMMUNITY, 
+        AGE,
+        ROLE
+        FROM USERS WHERE U_ID=:id");
     $stmt->bindParam(':id', $id);
     $stmt->execute();
     return $stmt->fetch();
@@ -149,15 +149,15 @@ function getAdministrators() {
 function createUser($username, $password, $name, $surname, $email, $genre, $age, $autonomousCommunity, $role) {
     $con = connect();
     $stmt = $con->prepare("INSERT INTO USERS VALUES(null, 
-                                                    :username, 
-                                                    :password, 
-                                                    :name,
-                                                    :surname,
-                                                    :email, 
-                                                    :genre, 
-                                                    :autonomousCommunity, 
-                                                    :age,
-                                                    :role)");
+        :username, 
+        :password, 
+        :name,
+        :surname,
+        :email, 
+        :genre, 
+        :autonomousCommunity, 
+        :age,
+        :role)");
     $stmt->bindParam(':username', $username);
     $stmt->bindParam(':password', $password);
     $stmt->bindParam(':name', $name);
@@ -175,19 +175,19 @@ function actualizarUsuario($inscripcion){
     $con =connect();
     
     if (!empty($inscripcion["username"]) && !empty($inscripcion["name"]) && !empty($inscripcion["surname"]) && !empty($inscripcion["email"])
-    && !empty($inscripcion["genre"]) && !empty($inscripcion["age"]) && !empty($inscripcion["aut"])
-   && !empty($inscripcion["role"])){
+        && !empty($inscripcion["genre"]) && !empty($inscripcion["age"]) && !empty($inscripcion["aut"])
+        && !empty($inscripcion["role"])){
 
 
-    $stmt = $con->prepare("UPDATE USERS SET USERNAME=:username, 
-                                            PASSWORD=:password,
-                                            NAME=:name,
-                                            SURNAME=:surname,
-                                            EMAIL=:email, 
-                                            GENRE=:genre, 
-                                            AUTONOMOUS_COMMUNITY=:autonomousCommunity, 
-                                            AGE=:age,
-                                            ROLE=:role WHERE U_ID=:id");
+        $stmt = $con->prepare("UPDATE USERS SET USERNAME=:username, 
+            PASSWORD=:password,
+            NAME=:name,
+            SURNAME=:surname,
+            EMAIL=:email, 
+            GENRE=:genre, 
+            AUTONOMOUS_COMMUNITY=:autonomousCommunity, 
+            AGE=:age,
+            ROLE=:role WHERE U_ID=:id");
 
     
     $stmt->bindParam(':id', $id);
@@ -200,7 +200,7 @@ function actualizarUsuario($inscripcion){
     $stmt->bindParam(':autonomousCommunity', $aut);
     $stmt->bindParam(':age', $age);
     $stmt->bindParam(':role', $role);
-   
+    
 
     $id = $inscripcion['id'];
     $username = $inscripcion['username'];
@@ -223,10 +223,10 @@ function actualizarUsuario($inscripcion){
 
 
 
-        if($stmt){
-            $res = true;
-        }
+    if($stmt){
+        $res = true;
     }
+}
 
-    return $res;
+return $res;
 }

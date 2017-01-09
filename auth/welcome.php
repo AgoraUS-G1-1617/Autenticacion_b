@@ -23,74 +23,74 @@ include_once 'variables.php';
 	<script type="text/javascript" src="scripts/index.js"></script>
 	
 	<link rel="stylesheet" href="style/bootstrap/css/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="style/bootstrap/css/bootstrap-theme.css" type="text/css">
-    <link rel="stylesheet" href="style/bootstrap/css/bootstrap-theme.css.map" type="text/css">
-    <link rel="stylesheet" href="style/bootstrap/css/bootstrap.css.map" type="text/css">
-    
-    <link rel="stylesheet" href="style/style.css" type="text/css">
-	
+  <link rel="stylesheet" href="style/bootstrap/css/bootstrap-theme.css" type="text/css">
+  <link rel="stylesheet" href="style/bootstrap/css/bootstrap-theme.css.map" type="text/css">
+  <link rel="stylesheet" href="style/bootstrap/css/bootstrap.css.map" type="text/css">
+  
+  <link rel="stylesheet" href="style/style.css" type="text/css">
+  
 
 
-    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <title><?php echo TITLE?></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title><?php echo TITLE?></title>
 </head>
 <body>
 
-<div class="cabina">
+  <div class="cabina">
 
-	<?php 
+   <?php 
 
-	if(isset($_SESSION["administradorCorrecto"]) && $_SESSION["administradorCorrecto"]==true){
-		echo'
+   if(isset($_SESSION["administradorCorrecto"]) && $_SESSION["administradorCorrecto"]==true){
+    echo'
     <input  onClick="location.href = \'panelAdministracion.php\' "
-                            id="PanelAdm"
-                            type="button"
-                            value ="Panel de Administracion" 
-                            class="btn btn-info botonAdministracion"/>
-                            ';
-	}
-	?>
+    id="PanelAdm"
+    type="button"
+    value ="Panel de Administracion" 
+    class="btn btn-info botonAdministracion"/>
+    ';
+  }
+  ?>
 
-    
-  </div>
-	
-	<div class="tituloInicio">Selecciona dónde quieres acceder</div>
-	
-	<div class="row">
+  
+</div>
+
+<div class="tituloInicio">Selecciona dónde quieres acceder</div>
+
+<div class="row">
   <div class="col-md-4">
   	<div class="censo">
-		<h1 class="tituloW">Censo</h1>
-		<input  onClick="location.href = 'https://censos.agoraus1.egc.duckdns.org/' "
-                            id="censoId" 
-                            type="button"
-                            value ="Entra" 
-                           	class="btn btn-info"/>
-	</div>
+      <h1 class="tituloW">Censo</h1>
+      <input  onClick="location.href = 'https://censos.agoraus1.egc.duckdns.org/' "
+      id="censoId" 
+      type="button"
+      value ="Entra" 
+      class="btn btn-info"/>
+    </div>
   </div>
   
   <div class="col-md-4">
   	<div class="cabina">
-		<h1 class="tituloW">Cabina</h1>
-		<input  onClick="location.href = 'https://cvotacion.agoraus1.egc.duckdns.org/' "
-                            id="cabinaId"
-                            type="button"
-                            value ="Entra" 
-                           	class="btn btn-info"/>
-	</div>
+      <h1 class="tituloW">Cabina</h1>
+      <input  onClick="location.href = 'https://cvotacion.agoraus1.egc.duckdns.org/' "
+      id="cabinaId"
+      type="button"
+      value ="Entra" 
+      class="btn btn-info"/>
+    </div>
   </div>
   
   <div class="col-md-4">
   	<div class="deliberaciones">
-		<h1 class="tituloW">Deliberaciones</h1>
-		<input  onClick="location.href = 'https://deliberaciones.agoraus1.egc.duckdns.org/' "
-                            id="deliberacionesId" 
-                            type="button"
-                            value ="Entra" 
-                           	class="btn btn-info"/>
-	</div>
+      <h1 class="tituloW">Deliberaciones</h1>
+      <input  onClick="location.href = 'https://deliberaciones.agoraus1.egc.duckdns.org/' "
+      id="deliberacionesId" 
+      type="button"
+      value ="Entra" 
+      class="btn btn-info"/>
+    </div>
   </div>
 </div>
-	
-	
+
+
 </body>
 </html>

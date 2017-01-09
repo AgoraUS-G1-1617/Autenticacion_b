@@ -68,20 +68,20 @@ if (isset($_SESSION['registerForm'])) {
         $error += 4096;
     } else {
         $autonomousCommunities = [ "Andalucia", 
-                                    "Murcia", 
-                                    "Extremadura", 
-                                    "Castilla la Mancha", 
-                                    "Comunidad Valenciana", 
-                                    "Madrid", 
-                                    "Castilla y Leon", 
-                                    "Aragon", 
-                                    "Cataluña", 
-                                    "La Rioja", 
-                                    "Galicia", 
-                                    "Asturias", 
-                                    "Cantabria", 
-                                    "Pais Vasco", 
-                                    "Navarra"];
+        "Murcia", 
+        "Extremadura", 
+        "Castilla la Mancha", 
+        "Comunidad Valenciana", 
+        "Madrid", 
+        "Castilla y Leon", 
+        "Aragon", 
+        "Cataluña", 
+        "La Rioja", 
+        "Galicia", 
+        "Asturias", 
+        "Cantabria", 
+        "Pais Vasco", 
+        "Navarra"];
         if (!(in_array($_REQUEST['autonomous_community'], $autonomousCommunities))) {
             $registerForm['autonomous_community'] = $_REQUEST['autonomous_community'];
             $error += 8192;
@@ -114,14 +114,14 @@ if (isset($_SESSION['registerForm'])) {
     if ($error == 0) {
         try{
             createUser($registerForm['username'], 
-                        md5($registerForm['password']), 
-                        $registerForm['name'],
-                        $registerForm['surname'],
-                        $registerForm['email'], 
-                        $registerForm['genre'], 
-                        $registerForm['age'], 
-                        $registerForm['autonomous_community'],
-                        $registerForm['role']);
+                md5($registerForm['password']), 
+                $registerForm['name'],
+                $registerForm['surname'],
+                $registerForm['email'], 
+                $registerForm['genre'], 
+                $registerForm['age'], 
+                $registerForm['autonomous_community'],
+                $registerForm['role']);
             session_unset($_SESSION['registerForm']);
             header("Location: index.php");
         }catch(Exception $e) {
@@ -129,42 +129,42 @@ if (isset($_SESSION['registerForm'])) {
             $_SESSION['registerForm'] = $registerForm;
 
             switch( $uri ) { 
-            case '/register.php': 
+                case '/register.php': 
                 header("Location: register.php?error=".$error);
                 break; 
-            case '/registerFacebook.php': 
+                case '/registerFacebook.php': 
                 header("Location: registerFacebook.php?error=".$error);
                 break; 
-            case '/registerTwitter.php': 
+                case '/registerTwitter.php': 
                 header("Location: registerTwitter.php?error=".$error);
                 break; 
             } 
-           
+            
         }
     } else {
         $_SESSION['registerForm'] = $registerForm;
         switch( $uri ) { 
             case '/register.php': 
-                header("Location: register.php?error=".$error);
-                break; 
+            header("Location: register.php?error=".$error);
+            break; 
             case '/registerFacebook.php': 
-                header("Location: registerFacebook.php?error=".$error);
-                break; 
+            header("Location: registerFacebook.php?error=".$error);
+            break; 
             case '/registerTwitter.php': 
-                header("Location: registerTwitter.php?error=".$error);
-                break; 
-            } 
+            header("Location: registerTwitter.php?error=".$error);
+            break; 
+        } 
     }
 } else {
     switch( $uri ) { 
-            case '/register.php': 
-                header("Location: register.php?error=".$error);
-                break; 
-            case '/registerFacebook.php': 
-                header("Location: registerFacebook.php?error=".$error);
-                break; 
-            case '/registerTwitter.php': 
-                header("Location: registerTwitter.php?error=".$error);
-                break; 
-            } 
+        case '/register.php': 
+        header("Location: register.php?error=".$error);
+        break; 
+        case '/registerFacebook.php': 
+        header("Location: registerFacebook.php?error=".$error);
+        break; 
+        case '/registerTwitter.php': 
+        header("Location: registerTwitter.php?error=".$error);
+        break; 
+    } 
 }

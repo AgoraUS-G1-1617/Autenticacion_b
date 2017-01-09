@@ -77,7 +77,7 @@ include_once("database.php");
 
 
         <form name="myForm" action="registerTwitter.php" method="post">
-        <p class="textoNormal">¿Esta seguro de registrarse en nuestra aplicación <?php echo htmlentities($nombre)?>?</p>
+        <div class="textoNormal">¿Esta seguro de registrarse en nuestra aplicación <?php echo htmlentities($nombre)?>?</div>
         <input type="hidden" name="username" value=<?php echo $username?>>
         <input type="hidden" name="name" value=<?php echo $nombre?>>
         <input type="submit" value="Submit"  value="Confirmar"  class="btn btn-info">

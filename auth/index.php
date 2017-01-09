@@ -69,14 +69,6 @@ include_once 'variables.php';
                             value ="Registrate" 
                            	class="btn btn-info"/>
 	  </div>
-	  <div class="col-md-4">
-		<h1>Entrar con Twitter</h1>
-		<input  onClick="location.href = 'twitter_login.php' "
-                            id="twitter_login" 
-                            type="button"
-                            value ="Entra" 
-                           	class="btn btn-info"/>
-	  </div>
 
 	</div>
 	

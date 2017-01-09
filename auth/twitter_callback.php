@@ -54,22 +54,29 @@ include_once("database.php");
 <head>
 
     <link rel="shortcut icon" href="favicon.ico">
-
-    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
-    <script type="text/javascript" src="bootstrap/js/bootstrap.mi.js"></script>
-    <script type="text/javascript" src="bootstrap/js/npm.js"></script>
-    <script type="text/javascript" src="bootstrap/js/index.js"></script>
+    
+    <script type="text/javascript" src="style/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="style/bootstrap/js/bootstrap.mi.js"></script>
+    <script type="text/javascript" src="style/bootstrap/js/npm.js"></script>
+    <script type="text/javascript" src="style/bootstrap/js/index.js"></script>
+    
+    <!-- esto hace referencia a algo que no existe -->
     <script type="text/javascript" src="scripts/index.js"></script>
-  
+    
+    <link rel="stylesheet" href="style/style.css" type="text/css">
+
+    
     <link rel="stylesheet" href="style/bootstrap/css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="style/bootstrap/css/bootstrap-theme.css" type="text/css">
     <link rel="stylesheet" href="style/bootstrap/css/bootstrap-theme.css.map" type="text/css">
     <link rel="stylesheet" href="style/bootstrap/css/bootstrap.css.map" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
     
-    <link rel="stylesheet" href="style/style.css" type="text/css">
+
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     
 <title>Facebook Login JavaScript Example</title>
-<meta charset="UTF-8">
 </head>
 <body>
 
@@ -77,6 +84,7 @@ include_once("database.php");
 
 
         <form name="myForm" action="registerTwitter.php" method="post">
+        <br><br>
         <div class="textoNormal">¿Esta seguro de registrarse en nuestra aplicación <?php echo htmlentities($nombre)?>?</div>
         <input type="hidden" name="username" value=<?php echo $username?>>
         <input type="hidden" name="name" value=<?php echo $nombre?>>

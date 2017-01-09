@@ -76,6 +76,91 @@ if(!(isset($_SESSION["administradorCorrecto"]))){
 			$seleccionFemenino="selected";
 		}
 
+			$seleccionAut1="";
+			$seleccionAut2="";
+			$seleccionAut3="";
+			$seleccionAut4="";
+			$seleccionAut5="";
+			$seleccionAut6="";
+			$seleccionAut7="";
+			$seleccionAut8="";
+			$seleccionAut9="";
+			$seleccionAut10="";
+			$seleccionAut11="";
+			$seleccionAut12="";
+			$seleccionAut13="";
+			$seleccionAut14="";
+			$seleccionAut15="";
+
+	  	switch ($aut) {
+	  		case 'Andalucia':
+	  			$seleccionAut1="selected";
+
+	  			break;
+	  		case 'Murcia':
+	  			$seleccionAut2="selected";
+	  			break;
+	  		case 'Extremadura':
+	  			$seleccionAut3="selected";
+	  			break;
+	  		case 'Castilla la Mancha':
+	  			$seleccionAut4="selected";
+	  			break;
+	  		case 'Comunidad Valenciana':
+	  			$seleccionAut5="selected";
+	  			break;
+	  		case 'Madrid':
+	  			$seleccionAut6="selected";
+	  			break;
+	  		case 'Castilla de Leon':
+	  			$seleccionAut7="selected";
+	  			break;
+	  		case 'Aragon':
+	  			$seleccionAut8="selected";
+	  			break;
+	  		case 'Cataluña':
+	  			$seleccionAut9="selected";
+	  			break;
+	  		case 'La Rioja':
+	  			$seleccionAut10="selected";
+	  			break;
+	  		case 'Galicia':
+	  			$seleccionAut11="selected";
+	  			break;
+	  		case 'Asturias':
+	  			$seleccionAut12="selected";
+	  			break;
+	  		case 'Cantabria':
+	  			$seleccionAut13="selected";
+	  			break;
+	  		case 'Pais Vasco':
+	  			$seleccionAut14="selected";
+	  			break;
+	  		case 'Navarra':
+	  			$seleccionAut15="selected";
+	  			break;
+	  		
+	  		default:
+	  		$seleccionAut1="";
+			$seleccionAut2="";
+			$seleccionAut3="";
+			$seleccionAut4="";
+			$seleccionAut5="";
+			$seleccionAut6="";
+			$seleccionAut7="";
+			$seleccionAut8="";
+			$seleccionAut9="";
+			$seleccionAut10="";
+			$seleccionAut11="";
+			$seleccionAut12="";
+			$seleccionAut13="";
+			$seleccionAut14="";
+			$seleccionAut15="";
+	  			
+	  			break;
+	  
+		}
+
 		if($rol=="ADMIN"){
 			$seleccionAdmin="selected";
 			$seleccionUsuario="";
@@ -148,24 +233,23 @@ if(!(isset($_SESSION["administradorCorrecto"]))){
 	value="'.$age.'"'; ?>/>
 
 	<label for="autonomous_community" class="labelForm">Comunidad autónoma:</label>
-	<input class="inputForm" type="text" name="aut" id="aut" list="aut" <?php echo'value="'.$aut.'"'; ?>/>
-	<datalist id="aut">
-		<option value="Andalucia"></option>
-		<option value="Murcia"></option>
-		<option value="Extremadura"></option>
-		<option value="Castilla la Mancha"></option>
-		<option value="Comunidad Valenciana"></option>
-		<option value="Madrid"></option>
-		<option value="Castilla y Leon"></option>
-		<option value="Aragon"></option>
-		<option value="Cataluña"></option>
-		<option value="La Rioja"></option>
-		<option value="Galicia"></option>
-		<option value="Asturias"></option>
-		<option value="Cantabria"></option>
-		<option value="Pais Vasco"></option>
-		<option value="Navarra"></option>
-	</datalist>
+	<select type="text" name="aut" id="aut" list="aut" class="inputForm" >
+		<option value="Andalucia" <?php echo $seleccionAut1; ?>>Andalucia</option>
+		<option value="Murcia" <?php echo $seleccionAut2; ?>>Murcia</option>
+		<option value="Extremadura" <?php echo $seleccionAut3; ?>>Extremadura</option>
+		<option value="Castilla la Mancha" <?php echo $seleccionAut4; ?>>Castilla la Mancha</option>
+		<option value="Comunidad Valenciana" <?php echo $seleccionAut5; ?>>Comunidad Valenciana</option>
+		<option value="Madrid" <?php echo $seleccionAut6; ?>> Madrid</option>
+		<option value="Castilla y Leon" <?php echo $seleccionAut7; ?>>Castilla y Leon</option>
+		<option value="Aragon" <?php echo $seleccionAut8; ?>>Aragon</option>
+		<option value="Cataluña" <?php echo $seleccionAut9; ?>>Cataluña</option>
+		<option value="La Rioja" <?php echo $seleccionAut10; ?>>La Rioja</option>
+		<option value="Galicia" <?php echo $seleccionAut11; ?>>Galicia</option>
+		<option value="Asturias" <?php echo $seleccionAut12; ?>>Asturias</option>
+		<option value="Cantabria" <?php echo $seleccionAut13; ?>>Cantabria</option>
+		<option value="Pais Vasco" <?php echo $seleccionAut14; ?>>Pais Vasco</option>
+		<option value="Navarra" <?php echo $seleccionAut15; ?>>Navarra</option>
+	</select>
 	
 	<br><br>
 

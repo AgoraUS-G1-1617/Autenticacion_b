@@ -51,12 +51,36 @@ include_once("database.php");
 
 <!DOCTYPE html>
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.mi.js"></script>
+    <script type="text/javascript" src="bootstrap/js/npm.js"></script>
+    <script type="text/javascript" src="bootstrap/js/index.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+  
+    <link rel="stylesheet" href="style/bootstrap/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="style/bootstrap/css/bootstrap-theme.css" type="text/css">
+    <link rel="stylesheet" href="style/bootstrap/css/bootstrap-theme.css.map" type="text/css">
+    <link rel="stylesheet" href="style/bootstrap/css/bootstrap.css.map" type="text/css">
+    
+    <link rel="stylesheet" href="style/style.css" type="text/css">
+    
+<title>Facebook Login JavaScript Example</title>
+<meta charset="UTF-8">
+</head>
 <body>
+
+        <div class="tituloInicio">Entra con Twitter</div>
+
+
         <form name="myForm" action="registerTwitter.php" method="post">
-        <p>¿Esta seguro de registrarse en nuestra aplicación <?php echo htmlentities($nombre)?>?</p>
+        <p class="textoNormal">¿Esta seguro de registrarse en nuestra aplicación <?php echo htmlentities($nombre)?>?</p>
         <input type="hidden" name="username" value=<?php echo $username?>>
         <input type="hidden" name="name" value=<?php echo $nombre?>>
-        <input type="submit" value="Submit"  value="Confirmar">
+        <input type="submit" value="Submit"  value="Confirmar"  class="btn btn-info">
         </form>
 </body>
 </html>

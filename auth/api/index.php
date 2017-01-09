@@ -133,7 +133,7 @@
 
     /**
     * \brief Comprobar usuario
-    * \details Comprobar si un usuario dado está ya autenticado en el sistema,
+    * \details Comprobar si un usuario dado está ya registrado en el sistema,
     * comprobando un token.
     * \return JSON
     */

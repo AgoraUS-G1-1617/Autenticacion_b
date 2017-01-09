@@ -28,8 +28,6 @@ include_once 'variables.php';
     <link rel="stylesheet" href="style/bootstrap/css/bootstrap.css.map" type="text/css">
     
     <link rel="stylesheet" href="style/style.css" type="text/css">
-	
-
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <title><?php echo TITLE?></title>

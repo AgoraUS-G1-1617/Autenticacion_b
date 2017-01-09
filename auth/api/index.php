@@ -156,8 +156,8 @@
         header('Content-type: application/json');
         $user = getUser($username);
 
-        $result['username'] = $user[0];
-        $result['role'] = $user[8];
+        //$result['username'] = $user[0];
+        $result['role'] = $user[9];
 
         echo json_encode(utf8ize($result),  JSON_UNESCAPED_UNICODE);
         return json_encode(utf8ize($result),  JSON_UNESCAPED_UNICODE);

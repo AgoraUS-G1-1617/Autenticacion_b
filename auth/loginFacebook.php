@@ -25,7 +25,7 @@
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     
-<title>Facebook Login JavaScript Example</title>
+<title>Entra con Facebook</title>
 </head>
 <body>
 
@@ -67,7 +67,11 @@
 
   window.fbAsyncInit = function() {
   FB.init({
-    appId      : '1166797976702364',
+    // AppId para master
+    // appId      : '1166797976702364',
+
+    // AppId para develop
+    appId      : '1845729408973513',
     cookie     : true,  // enable cookies to allow the server to access 
                         // the session
     xfbml      : true,  // parse social plugins on this page
@@ -135,9 +139,12 @@
     </fb:login-button>
   </div>
 
-  <div id="status">
+  <div id="status" class="textoNormal">
   </div>
 </div>
+      
+      <br><br>
+      <a href="logout.php" value="Cancelar" name="Cancelar" class="btn btn-cancelar">Cancelar</a>
 
 </body>
 </html>

@@ -3236,6 +3236,17 @@ fieldset[disabled] .btn-success.focus {
   border-color: #46b8da;
   font-size: 25px;
 }
+.btn-cancelar {
+  color: #fff;
+  background-color: #CB1716;
+  border-color: #46b8da;
+  font-size: 25px;
+}
+.btn-cancelar:hover {
+  color: #fff;
+  background-color: #ED5F5E;
+  border-color: #CB1716;
+}
 .btn-info:focus,
 .btn-info.focus {
   color: #fff;

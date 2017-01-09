@@ -84,14 +84,14 @@
         header('Content-type: application/json');
         $user = getUser($username);
 
-        $result['username'] = $user[0];
-        $result['name'] = $user[2];
-        $result['surname'] = $user[3];
-        $result['email'] = $user[4];
-        $result['genre'] = $user[5];
-        $result['autonomous_community'] = $user[6];
-        $result['age'] = $user[7];
-        $result['role'] = $user[8];
+        $result['username'] = $user[1];
+        $result['name'] = $user[3];
+        $result['surname'] = $user[4];
+        $result['email'] = $user[5];
+        $result['genre'] = $user[6];
+        $result['autonomous_community'] = $user[7];
+        $result['age'] = $user[8];
+        $result['role'] = $user[9];
 
         echo json_encode(utf8ize($result),  JSON_UNESCAPED_UNICODE);
         return json_encode(utf8ize($result),  JSON_UNESCAPED_UNICODE);

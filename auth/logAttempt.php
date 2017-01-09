@@ -43,6 +43,13 @@ try{
         }
 
 
+        if(isset($usuario)){
+            $_SESSION["inicioSesionCorrecto"] = TRUE;
+        }else{
+            $_SESSION["inicioSesionCorrecto"] = FALSE;
+        }
+
+
 
         header('Location: welcome.php');
     } else {

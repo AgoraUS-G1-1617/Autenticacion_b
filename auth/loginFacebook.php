@@ -116,7 +116,7 @@
 		'<input type="hidden" name="apellido" value="' + response.last_name +'">'+
 		'<input type="hidden" name="email" value="' + response.email +'">'+
 		'<input type="hidden" name="genero" value="' + response.gender +'"><br><br>'+
-		'<input type="submit" value="Submit"  value="Confirmar" class="btn btn-info">'+
+		'<input type="submit" value="Confirmar" class="btn btn-info">'+
 		'<\/form>';
 
     });

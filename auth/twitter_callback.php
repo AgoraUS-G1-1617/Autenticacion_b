@@ -76,7 +76,7 @@ include_once("database.php");
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     
-<title>Facebook Login JavaScript Example</title>
+<title>Entra con Twitter</title>
 </head>
 <body>
 
@@ -88,7 +88,12 @@ include_once("database.php");
         <div class="textoNormal">¿Esta seguro de registrarse en nuestra aplicación <?php echo htmlentities($nombre)?>?</div>
         <input type="hidden" name="username" value=<?php echo $username?>>
         <input type="hidden" name="name" value=<?php echo $nombre?>>
-        <input type="submit" value="Confirmar"  class="btn btn-info">
+       
+         <input type="reset" value="Borrar"  class="btn btn-info">
+         <input type="submit" value="Confirmar"  class="btn btn-info">
         </form>
+        
+        <br><br>
+        <a href="logout.php" value="Cancelar" name="Cancelar" class="btn btn-cancelar">Cancelar</a>
 </body>
 </html>

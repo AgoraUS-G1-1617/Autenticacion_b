@@ -31,7 +31,7 @@
 <body>
 
   <div class="tituloInicio">Entra con Redes Sociales</div>
-  <div class="principal">
+  <div class="principal textoCentro">
 
     <div class="col-md-4">
       <h1>Entrar con Facebook</h1>
@@ -50,7 +50,17 @@
       value ="Entra" 
       class="btn btn-info"/>
     </div>
+
+    <div class="col-md-4">
+    </div>
+
+
   </div>
+
+  <br><br>
+  <a href="logout.php" value="Cancelar" name="Cancelar" class="btn btn-cancelar">Cancelar</a>
+
+ 
 
 </body>
 </html>

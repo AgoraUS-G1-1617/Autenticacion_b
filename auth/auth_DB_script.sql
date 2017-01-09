@@ -45,6 +45,7 @@ INSERT INTO USERS VALUE(NULL, 'mancabcla','c7f3bfcb56a5d3d2623417f141edb160','Ma
 
 INSERT INTO USERS VALUE(NULL, 'fuerte94','e048609908aed7af5ffe60ad8c37fb2c', 'Jorge', 'Rodríguez Fuerte','jorrodfue@alum.us.es','Masculino','Andalucia','22','USUARIO');
 INSERT INTO USERS VALUE(NULL, 'aletormar','2a714a0e9c5af182865491b0969e5f60','Alejandro','Tortolero Martín','aletormar@alum.us.es','Masculino','Andalucia','27','USUARIO');
+INSERT INTO USERS VALUE(NULL, 'raftrugon','7545bb51a421283c44a02eb657c6b03b','Rafa','Trujillo','raftrugon@alum.us.es','Masculino','Andalucia','21','CREADOR_VOTACIONES');
 INSERT INTO USERS VALUE(NULL, 'admin', '21232f297a57a5a743894a0e4a801fc3','Admin','Admin','admin@admin.us.es', 'Masculino', 'Andalucia','22', 'ADMIN');
 
 COMMIT;

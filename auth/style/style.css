@@ -370,6 +370,15 @@ FOOTER
 .botonAdministracion{
 	z-index: 99em;
 	position: fixed;
+	left: 0;
+	top:0;
+	height: 2em;
+	font-size: 1em;
+}
+
+.botonCerrarSesion{
+	z-index: 99em;
+	position: fixed;
 	right: 0;
 	top:0;
 	height: 2em;
@@ -422,6 +431,7 @@ FOOTER
 	color: #333333;
 	font-size: 1.3em;
 }
+
 
 
 @media only screen and (max-width: 600px){

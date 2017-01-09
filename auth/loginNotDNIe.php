@@ -74,6 +74,10 @@ if (isset($_REQUEST['error'])) {
         <br><br><br><br>
         
         <input type="submit" class="btn btn-info" value="Entrar">
+        </form>
+
+        <br><br>
+      <a href="logout.php" value="Cancelar" name="Cancelar" class="btn btn-cancelar">Cancelar</a>
                           
 	</div>
     <div id="error"><?php echo $errorMsg?></div>

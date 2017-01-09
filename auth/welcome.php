@@ -51,6 +51,22 @@ include_once 'variables.php';
     class="btn btn-info botonAdministracion"/>
     ';
   }
+
+
+  if(isset($_SESSION["inicioSesionCorrecto"]) && $_SESSION["inicioSesionCorrecto"]==true){
+    echo'
+    <input  onClick="location.href = \'logout.php\' "
+    id="cerrarSesion"
+    name="cerrarSesion"
+    type="button"
+    value ="Cerrar Sesión" 
+    class="btn btn-info botonCerrarSesion"/>
+    ';
+  }else{
+    echo '<script language="javascript">
+              window.location.href="index.php";
+            </script>';
+  }
   ?>
 
   

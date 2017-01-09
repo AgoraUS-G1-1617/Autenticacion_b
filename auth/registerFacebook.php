@@ -291,11 +291,17 @@ $_SESSION['registerForm'] = $registerForm;
         <br>
         
         <div align="center">  
+        <input type="reset" value="Borrar"  class="btn btn-info">
+
             <input  type="submit" 
             id="submit" 
             value ="Enviar" 
             class="btn btn-info" align="center"/>
         </div> 
+
+         <br><br>
+      <a href="logout.php" value="Cancelar" name="Cancelar" class="btn btn-cancelar">Cancelar</a>
+       
         
         
         

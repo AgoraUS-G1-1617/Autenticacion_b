@@ -25,7 +25,7 @@
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     
-<title>Facebook Login JavaScript Example</title>
+<title>Entra con Facebook</title>
 </head>
 <body>
 
@@ -139,9 +139,12 @@
     </fb:login-button>
   </div>
 
-  <div id="status">
+  <div id="status" class="textoNormal">
   </div>
 </div>
+      
+      <br><br>
+      <a href="logout.php" value="Cancelar" name="Cancelar" class="btn btn-cancelar">Cancelar</a>
 
 </body>
 </html>

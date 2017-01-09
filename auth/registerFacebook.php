@@ -7,6 +7,8 @@
 * \author auth.agoraUS
 */
 
+//Esta es la página de registro mediando autenticación con Facebook
+
 include_once("database.php");
 session_start();
 

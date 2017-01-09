@@ -8,6 +8,8 @@ session_start();
 * \author auth.agoraUS
 */
 
+//Esta es la página de Bienvenida al usuario logeado
+
 include_once 'variables.php';
 
 ?>

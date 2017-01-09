@@ -7,6 +7,8 @@
 * \author auth.agoraUS
 */
 
+//Esta es la página de registro mediando autenticación con Twitter
+
 include_once("database.php");
 session_start();
 

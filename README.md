@@ -7,6 +7,12 @@ Pruebas Travis (master)
 Pruebas Travis (develop)
 [![Build Status](https://travis-ci.org/AgoraUS-G1-1617/Autenticacion_b.svg?branch=develop)](https://travis-ci.org/AgoraUS-G1-1617/Autenticacion_b)
 
+Enlace a Github
+https://github.com/AgoraUS-G1-1617/Autenticacion_b.svg?branch=develop
+
+Enlace a Opera
+http://opera.eii.us.es/egc/public/trabajo/ver/id/49
+
 Repositorio para el proyecto de EGC del grupo Autenticación para el curso 2016-2017 por la ETSII (Universidad de Sevilla).
 
 ## Integrantes del grupo:

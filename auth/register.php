@@ -7,6 +7,9 @@
 * \author auth.agoraUS
 */
 
+//Esta es la página de registro básica
+
+
 include_once("database.php");
 session_start();
 

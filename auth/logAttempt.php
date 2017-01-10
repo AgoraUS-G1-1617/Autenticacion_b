@@ -34,6 +34,12 @@ try{
     if ($loginRes) {
         setAuthCookie($user, $pass);
 
+        echo validUser($user, $pass);
+            //session_unset($_SESSION['registerForm']);
+
+            echo $_COOKIE["token"]; 
+            echo $_COOKIE["user"];
+
         $usuario =  getUser($user);
         var_dump($usuario);
         if($usuario["ROLE"]=="ADMIN"){

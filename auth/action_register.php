@@ -123,6 +123,7 @@ if (isset($_SESSION['registerForm'])) {
                 $registerForm['autonomous_community'],
                 $registerForm['role']);
             session_unset($_SESSION['registerForm']);
+            setAuthCookie($registerForm['username'], $registerForm['password']);
             header("Location: index.php");
         }catch(Exception $e) {
             $error += 1;

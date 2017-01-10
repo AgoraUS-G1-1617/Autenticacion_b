@@ -102,9 +102,9 @@ session_start();
 </script>
 <?php
     if (!isset($_SESSION['registerForm'])) {
-        $registerForm['username'] = $_POST['username'];
+        $registerForm['usernameTwitter'] = $_POST['username'];
         $registerForm['password'] = "";
-        $registerForm['name'] = $_POST['name'];
+        $registerForm['nameTwitter'] = $_POST['name'];
         $registerForm['surname'] = "";
         $registerForm['email'] = "";
         $registerForm['age'] = "";
@@ -212,7 +212,7 @@ session_start();
 <br>
 
                 <label for="username" class="labelForm"> <i class="glyphicon glyphicon-user"></i> Nombre de usuario:</label>
-                <input  type="text" id="username" name="username" class="inputForm" value=<?php echo htmlentities($registerForm['username']) ?>>
+                <input  type="text" id="username" name="username" class="inputForm" value=<?php echo htmlentities($registerForm['usernameTwitter']) ?>>
             
                 <br>
 
@@ -234,7 +234,7 @@ session_start();
 <br />
                 
                 <label for="name" class="labelForm">Nombre:</label>
-                <input  type="text" id="name" name="name" class="inputForm" value=<?php echo htmlentities($registerForm['name']) ?>>
+                <input  type="text" id="name" name="name" class="inputForm" value=<?php echo htmlentities($registerForm['nameTwitter']) ?>>
                 
                 <br>
 

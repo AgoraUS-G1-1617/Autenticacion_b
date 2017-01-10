@@ -12,8 +12,8 @@
     */
     function setAuthCookie($username, $password) {
         if (validUser($username, $password)) {
-            setcookie("token", getToken($username, md5($password)), time()+ONE_YEAR, "/", "", 0, true, "agoraus1.egc.duckdns.org");
-            setcookie("user", $username, time()+ONE_YEAR, "/", "", 0, true, "agoraus1.egc.duckdns.org");
+            setcookie("token", getToken($username, md5($password)), time()+ONE_YEAR, "/", "", 0, true, "authb.agoraus1.egc.duckdns.org");
+            setcookie("user", $username, time()+ONE_YEAR, "/", "", 0, true, "authb.agoraus1.egc.duckdns.org");
         }
     }
 

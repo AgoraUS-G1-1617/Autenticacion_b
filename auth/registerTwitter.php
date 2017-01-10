@@ -102,9 +102,9 @@ session_start();
 </script>
 <?php
     if (!isset($_SESSION['registerForm'])) {
-        $registerForm['usernameTwitter'] = $_POST['username'];
+        $registerForm['usernameTwitter'] = $_POST['usernameTwitter'];
         $registerForm['password'] = "";
-        $registerForm['nameTwitter'] = $_POST['name'];
+        $registerForm['nameTwitter'] = $_POST['nameTwitter'];
         $registerForm['surname'] = "";
         $registerForm['email'] = "";
         $registerForm['age'] = "";

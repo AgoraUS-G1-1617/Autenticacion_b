@@ -107,6 +107,17 @@ include_once 'variables.php';
       class="btn btn-info"/>
     </div>
   </div>
+
+  <div class="col-md-4">
+    <div class="deliberaciones">
+      <h1 class="tituloW">Creación de votaciones</h1>
+      <input  onClick="location.href = 'https://cavotacion.agoraus1.egc.duckdns.org/' "
+      id="deliberacionesId" 
+      type="button"
+      value ="Entra" 
+      class="btn btn-info"/>
+    </div>
+  </div>
 </div>
 
 

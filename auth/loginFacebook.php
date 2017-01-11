@@ -67,6 +67,7 @@
 
   window.fbAsyncInit = function() {
   FB.init({
+    // AppId para develop: 1845729408973513
     // AppId para master
     appId      : '1166797976702364',
     cookie     : true,  // enable cookies to allow the server to access 

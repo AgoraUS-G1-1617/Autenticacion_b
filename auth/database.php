@@ -124,14 +124,21 @@ function getEmail($email) {
 */
 function getAllUsers() {
     $con = connect();
-    $stmt = $con->prepare("SELECT U_ID, USERNAME, PASSWORD, NAME, SURNAME, EMAIL, GENRE, AUTONOMOUS_COMMUNITY, AGE, ROLE FROM USERS");
+    $stmt = $con->prepare("SELECT U_ID, USERNAME, PASSWORD, NAME, SURNAME, EMAIL, GENRE, AUTONOMOUS_COMMUNITY, AGE, ROLE FROM USERS WHERE ROLE='USUARIO' or ROLE='ADMIN'");
+    $stmt->execute();
+    return $stmt->fetchAll();
+}
+
+function getAllCreadores() {
+    $con = connect();
+    $stmt = $con->prepare("SELECT U_ID, USERNAME, PASSWORD, NAME, SURNAME, EMAIL, GENRE, AUTONOMOUS_COMMUNITY, AGE, ROLE FROM USERS WHERE ROLE='CREADOR_VOTACIONES'");
     $stmt->execute();
     return $stmt->fetchAll();
 }
 
 function getAdministrators() {
     $con = connect();
-    $stmt = $con->prepare("SELECT U_ID, USERNAME, PASSWORD, NAME, SURNAME, EMAIL, GENRE, AUTONOMOUS_COMMUNITY, AGE, ROLE FROM USERS where ROLE='ADMIN'");
+    $stmt = $con->prepare("SELECT U_ID, USERNAME, PASSWORD, NAME, SURNAME, EMAIL, GENRE, AUTONOMOUS_COMMUNITY, AGE, ROLE FROM USERS WHERE ROLE='ADMIN'");
     $stmt->execute();
     return $stmt->fetchAll();
 }

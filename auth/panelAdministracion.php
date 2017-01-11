@@ -110,8 +110,8 @@ echo '<br><br>
 }
         
 
-
-$usuarios = getAllUsers();
+$usuarios = getAllCreadores();
+$usuarios = $usuarios + getAllUsers();
 $cont = 0;
 
 foreach($usuarios as $i){

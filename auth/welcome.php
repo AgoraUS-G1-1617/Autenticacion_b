@@ -77,7 +77,7 @@ include_once 'variables.php';
 <div class="row">
   <div class="col-md-4">
   	<div class="censo">
-      <h1 class="tituloW">Censo</h1>
+      <h1 class="tituloW">Censos</h1>
       <input  onClick="location.href = 'https://censos.agoraus1.egc.duckdns.org/' "
       id="censoId" 
       type="button"
@@ -88,9 +88,20 @@ include_once 'variables.php';
   
   <div class="col-md-4">
   	<div class="cabina">
-      <h1 class="tituloW">Cabina</h1>
+      <h1 class="tituloW">Cabina de votaciones</h1>
       <input  onClick="location.href = 'https://cvotacion.agoraus1.egc.duckdns.org/' "
       id="cabinaId"
+      type="button"
+      value ="Entra" 
+      class="btn btn-info"/>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="cabina">
+      <h1 class="tituloW">Cabina de Telegram</h1>
+      <input  onClick="location.href = 'https://telegram.me/CabinaEGCBot' "
+      id="cabinaTelegramId"
       type="button"
       value ="Entra" 
       class="btn btn-info"/>
@@ -107,6 +118,51 @@ include_once 'variables.php';
       class="btn btn-info"/>
     </div>
   </div>
+
+  <div class="col-md-4">
+    <div class="deliberaciones">
+      <h1 class="tituloW">Creación de votaciones</h1>
+      <input  onClick="location.href = 'https://cavotacion.agoraus1.egc.duckdns.org/' "
+      id="creacionVotacionesId" 
+      type="button"
+      value ="Entra" 
+      class="btn btn-info"/>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="deliberaciones">
+      <h1 class="tituloW">Recuento y modificación</h1>
+      <input  onClick="location.href = 'https://recuento.agoraus1.egc.duckdns.org/' "
+      id="recuentoModificacionId" 
+      type="button"
+      value ="Entra" 
+      class="btn btn-info"/>
+    </div>
+  </div>
+
+    <div class="col-md-4">
+    <div class="deliberaciones">
+      <h1 class="tituloW">Almacenamiento</h1>
+      <input  onClick="location.href = 'https://almacenamiento.agoraus1.egc.duckdns.org/' "
+      id="almacenamientoId" 
+      type="button"
+      value ="Entra" 
+      class="btn btn-info"/>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="deliberaciones">
+      <h1 class="tituloW">Fronted</h1>
+      <input  onClick="location.href = 'https://frontend.agoraus1.egc.duckdns.org/' "
+      id="frontendId" 
+      type="button"
+      value ="Entra" 
+      class="btn btn-info"/>
+    </div>
+  </div>
+
 </div>
 
 

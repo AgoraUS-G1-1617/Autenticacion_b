@@ -127,44 +127,14 @@ if (isset($_SESSION['registerForm'])) {
         }catch(Exception $e) {
             $error += 1;
             $_SESSION['registerForm'] = $registerForm;
-
-            switch( $uri ) { 
-                case '/register.php': 
-                header("Location: register.php?error=".$error);
-                break; 
-                case '/registerFacebook.php': 
-                header("Location: registerFacebook.php?error=".$error);
-                break; 
-                case '/registerTwitter.php': 
-                header("Location: registerTwitter.php?error=".$error);
-                break; 
-            } 
+            header("Location: register.php?error=".$error);  
             
         }
     } else {
         $_SESSION['registerForm'] = $registerForm;
-        switch( $uri ) { 
-            case '/register.php': 
-            header("Location: register.php?error=".$error);
-            break; 
-            case '/registerFacebook.php': 
-            header("Location: registerFacebook.php?error=".$error);
-            break; 
-            case '/registerTwitter.php': 
-            header("Location: registerTwitter.php?error=".$error);
-            break; 
-        } 
+        header("Location: register.php?error=".$error);
+             
     }
 } else {
-    switch( $uri ) { 
-        case '/register.php': 
         header("Location: register.php?error=".$error);
-        break; 
-        case '/registerFacebook.php': 
-        header("Location: registerFacebook.php?error=".$error);
-        break; 
-        case '/registerTwitter.php': 
-        header("Location: registerTwitter.php?error=".$error);
-        break; 
-    } 
 }

@@ -300,7 +300,7 @@ $_SESSION['registerForm'] = $registerForm;
         </div> 
 
          <br><br>
-      <a href="logout.php" value="Cancelar" name="Cancelar" class="btn btn-cancelar">Cancelar</a>
+      <a href="logout.php?Cancelar=true" value="Cancelar" name="Cancelar" class="btn btn-cancelar">Cancelar</a>
        
         
         
